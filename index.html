@@ -111,12 +111,15 @@
         <p>Zelle (instant and free): <strong>702.890.5469</strong></p>
     </div>
     <div class="payment-option">
-        <h3>Additional Options</h3>
-        <p>PayPal: <a href="https://paypal.me/sutras" target="_blank">PayPal.Me/sutras</a></strong>  ($6 fee applies)</p>
-        <p>CashApp: <strong>$cocoji</strong>  ($6 fee applies)</p>
-        <p>Venmo: <strong>@drcorynna-clarke</strong>  ($6 fee applies)</p>
-        <p>Apple Pay: <strong>702.890.5469</strong> ($6 fee applies)</p>
+        <h3>Additional Options</h3> <strong> ($6 fee applies for payment options below) </p>
+        <p>PayPal: <a href="https://paypal.me/sutras" target="_blank">PayPal.Me/sutras</a></strong>  </p>
+        <p>CashApp: <strong>$cocoji</strong>  </p>
+        <p>Venmo: <strong>@drcorynna-clarke</strong>  </p>
+        <p>Apple Pay: <strong>702.890.5469</strong> </p>
     </div>
+    
+    
+    
 
     <h2>About Dr. Corynna Clarke</h2>
     <p>Expertise: Tantra, intimacy, relationships, and personal growth.</p>
@@ -129,8 +132,51 @@
 </footer>
 
 <script>
-    // JavaScript for previewing images and videos will be added on the server side
+    document.addEventListener("DOMContentLoaded", function() {
+        const imageContainer = document.createElement('div');
+        const videoContainer = document.createElement('div');
+
+        imageContainer.className = 'uploaded-images';
+        videoContainer.className = 'uploaded-videos';
+
+        // Image file names
+        const images = [
+            'pictures/Dr Corynna Clarke image 1.jpg',
+            'pictures/Dr Corynna Clarke image 2.jpg',
+            'pictures/Dr Corynna Clarke image 3.jpg'
+        ];
+
+        // Video file name
+        const videos = [
+            'videos/Dr Corynna Clarke video.mp4'
+        ];
+
+        // Load images
+        images.forEach(imageSrc => {
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = 'Dr Corynna Clarke';
+            img.style.maxWidth = '100%'; // Responsive image
+            img.style.margin = '5px';
+            imageContainer.appendChild(img);
+        });
+
+        // Load videos
+        videos.forEach(videoSrc => {
+            const video = document.createElement('video');
+            video.src = videoSrc;
+            video.controls = true; // Show controls for the video
+            video.style.maxWidth = '100%'; // Responsive video
+            videoContainer.appendChild(video);
+        });
+
+        // Append the containers to the main section
+        const mainSection = document.querySelector('main');
+        mainSection.appendChild(imageContainer);
+        mainSection.appendChild(videoContainer);
+    });
 </script>
+    
 
 </body>
 </html>
