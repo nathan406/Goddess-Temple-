@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Goddess Temple | Dr. Corynna Clarke</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <style>
+        .payment-section {
+            padding-top: 120px;
+            min-height: 100vh;
+            background-color: var(--white);
+        }
+
+        .payment-options-container {
+            margin-top: 40px;
+        }
+
+        .payment-options-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .payment-card {
+            flex: 0 0 calc(50% - 30px);
+            max-width: 350px;
+            min-width: 280px;
+        }
+
+        .payment-options-row.second-row {
+            justify-content: center;
+        }
+
+        .payment-options-row.second-row .payment-card {
+            flex: 0 0 350px;
+        }
+
+        @media (max-width: 768px) {
+            .payment-card {
+                flex: 0 0 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        .payment-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .payment-card.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(138, 43, 226, 0.05);
+        }
+
+        .payment-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .payment-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .payment-description {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .service-selection {
+            margin-top: 40px;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-option {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .service-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-option.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(138, 43, 226, 0.05);
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+
+        .checkout-form {
+            margin-top: 40px;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .checkout-form.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .checkout-summary {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+        }
+
+        .proceed-payment {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">Goddess Temple</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Payment Process</h2>
+            </div>
+
+            <!-- Step 1: Service Selection -->
+            <div class="service-selection" data-aos="fade-up">
+                <h3>Step 1: Select Your Service</h3>
+                <div class="service-options">
+                    <div class="service-option" data-service="half-hour" data-price="111">
+                        <i class="fas fa-clock"></i>
+                        <h4>Half Hour Session</h4>
+                        <div class="service-price">$111</div>
+                        <p>30-minute virtual session with Dr. Corynna Clarke</p>
+                    </div>
+                    <div class="service-option" data-service="full-hour" data-price="200">
+                        <i class="fas fa-hourglass-half"></i>
+                        <h4>Full Hour Session</h4>
+                        <div class="service-price">$200</div>
+                        <p>60-minute virtual session with Dr. Corynna Clarke</p>
+                    </div>
+                    <div class="service-option" data-service="two-hours" data-price="333">
+                        <i class="fas fa-hourglass"></i>
+                        <h4>2 Hours Session</h4>
+                        <div class="service-price">$333</div>
+                        <p>120-minute virtual session with Dr. Corynna Clarke</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Payment Method -->
+            <div class="payment-options-container" data-aos="fade-up">
+                <h3>Step 2: Select Payment Method</h3>
+
+                <!-- First row with PayPal and CashApp -->
+                <div class="payment-options-row">
+                    <div class="payment-card" data-payment="paypal">
+                        <div class="payment-icon">
+                            <i class="fab fa-paypal"></i>
+                        </div>
+                        <h4 class="payment-title">PayPal</h4>
+                        <p class="payment-description">Pay securely using your PayPal account</p>
+                        <a href="#" class="btn btn-outline select-payment" data-payment="paypal">Select PayPal</a>
+                    </div>
+                    <div class="payment-card" data-payment="cashapp">
+                        <div class="payment-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h4 class="payment-title">CashApp</h4>
+                        <p class="payment-description">Quick and easy payments with CashApp</p>
+                        <a href="#" class="btn btn-outline select-payment" data-payment="cashapp">Select CashApp</a>
+                    </div>
+                </div>
+
+                <!-- Second row with Venmo centered -->
+                <div class="payment-options-row second-row">
+                    <div class="payment-card" data-payment="venmo">
+                        <div class="payment-icon">
+                            <i class="fab fa-vimeo-v"></i>
+                        </div>
+                        <h4 class="payment-title">Venmo</h4>
+                        <p class="payment-description">Send money easily with Venmo</p>
+                        <a href="#" class="btn btn-outline select-payment" data-payment="venmo">Select Venmo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Checkout Form -->
+            <div class="checkout-form" id="checkout-form">
+                <h3>Step 3: Complete Your Purchase</h3>
+                <div class="checkout-summary">
+                    <h4>Order Summary</h4>
+                    <div class="summary-row">
+                        <span>Service:</span>
+                        <span id="summary-service">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Price:</span>
+                        <span id="summary-price">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Payment Method:</span>
+                        <span id="summary-payment">-</span>
+                    </div>
+                </div>
+
+                <form id="payment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="customer-email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Any special requests or notes for your session" rows="3"></textarea>
+                    </div>
+                    <div class="proceed-payment">
+                        <button type="submit" class="btn btn-animated" id="proceed-btn">Proceed to Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                Goddess Temple © All Rights Reserved 2025
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Main JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true
+        });
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Payment Process Logic
+        let selectedService = null;
+        let selectedPayment = null;
+        let servicePrice = 0;
+
+        // Service Selection
+        const serviceOptions = document.querySelectorAll('.service-option');
+        serviceOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                serviceOptions.forEach(opt => opt.classList.remove('selected'));
+
+                // Add selected class to clicked option
+                this.classList.add('selected');
+
+                // Store selected service data
+                selectedService = this.getAttribute('data-service');
+                servicePrice = this.getAttribute('data-price');
+
+                // Update summary
+                updateSummary();
+
+                // Check if both service and payment are selected
+                checkFormReadiness();
+            });
+        });
+
+        // Payment Method Selection
+        const paymentCards = document.querySelectorAll('.payment-card');
+        const selectPaymentBtns = document.querySelectorAll('.select-payment');
+
+        selectPaymentBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove selected class from all cards
+                paymentCards.forEach(card => card.classList.remove('selected'));
+
+                // Add selected class to parent card
+                this.closest('.payment-card').classList.add('selected');
+
+                // Store selected payment method
+                selectedPayment = this.getAttribute('data-payment');
+
+                // Update summary
+                updateSummary();
+
+                // Check if both service and payment are selected
+                checkFormReadiness();
+            });
+        });
+
+        // Update Order Summary
+        function updateSummary() {
+            const summaryService = document.getElementById('summary-service');
+            const summaryPrice = document.getElementById('summary-price');
+            const summaryPayment = document.getElementById('summary-payment');
+
+            if (selectedService) {
+                let serviceName = '';
+                switch(selectedService) {
+                    case 'half-hour':
+                        serviceName = 'Half Hour Session';
+                        break;
+                    case 'full-hour':
+                        serviceName = 'Full Hour Session';
+                        break;
+                    case 'two-hours':
+                        serviceName = '2 Hours Session';
+                        break;
+                }
+                summaryService.textContent = serviceName;
+                summaryPrice.textContent = `$${servicePrice}`;
+            }
+
+            if (selectedPayment) {
+                let paymentName = '';
+                switch(selectedPayment) {
+                    case 'paypal':
+                        paymentName = 'PayPal';
+                        break;
+                    case 'cashapp':
+                        paymentName = 'CashApp';
+                        break;
+                    case 'venmo':
+                        paymentName = 'Venmo';
+                        break;
+                }
+                summaryPayment.textContent = paymentName;
+            }
+        }
+
+        // Check if form should be shown
+        function checkFormReadiness() {
+            const checkoutForm = document.getElementById('checkout-form');
+
+            if (selectedService && selectedPayment) {
+                checkoutForm.classList.add('active');
+                // Scroll to form
+                setTimeout(() => {
+                    checkoutForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            } else {
+                checkoutForm.classList.remove('active');
+            }
+        }
+
+        // Handle form submission
+        const paymentForm = document.getElementById('payment-form');
+        paymentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const customerEmail = document.getElementById('customer-email').value;
+
+            // Redirect to appropriate payment method
+            switch(selectedPayment) {
+                case 'paypal':
+                    window.location.href = `https://paypal.me/sutras/${servicePrice}`;
+                    break;
+                case 'cashapp':
+                    window.location.href = 'https://cash.app/$cocoji';
+                    break;
+                case 'venmo':
+                    window.location.href = 'https://venmo.com/@drcorynna-clarke';
+                    break;
+            }
+
+            // Store customer info in localStorage for confirmation page
+            localStorage.setItem('customerEmail', customerEmail);
+            localStorage.setItem('selectedService', selectedService);
+            localStorage.setItem('servicePrice', servicePrice);
+            localStorage.setItem('selectedPayment', selectedPayment);
+
+            // Redirect to confirmation page after a short delay
+            setTimeout(() => {
+                window.location.href = 'confirmation.html';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
