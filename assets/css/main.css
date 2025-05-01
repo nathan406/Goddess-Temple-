@@ -92,6 +92,16 @@ img {
   color: var(--white);
 }
 
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.service-cta {
+  margin-top: 30px;
+  text-align: center;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -465,6 +475,29 @@ section {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
+}
+
+.success-message {
+  background-color: rgba(138, 43, 226, 0.1);
+  border-left: 4px solid var(--primary-color);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-message i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.success-message h3 {
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  color: var(--dark-gray);
 }
 
 /* Lightbox */
