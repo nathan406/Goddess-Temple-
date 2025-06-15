@@ -246,7 +246,7 @@
                         </div>
                         <h4 class="payment-title">PayPal</h4>
                         <p class="payment-description">Pay securely using your PayPal account</p>
-                        <a href="#" class="btn btn-outline select-payment" data-payment="paypal">Select PayPal</a>
+                        <a href="https://paypal.me/uma64" class="btn btn-outline select-payment" data-payment="paypal">Select PayPal</a>
                     </div>
                     <div class="payment-card" data-payment="cashapp">
                         <div class="payment-icon">
@@ -254,7 +254,7 @@
                         </div>
                         <h4 class="payment-title">CashApp</h4>
                         <p class="payment-description">Quick and easy payments with CashApp</p>
-                        <a href="#" class="btn btn-outline select-payment" data-payment="cashapp">Select CashApp</a>
+                        <a href="https://cash.app/$cocoji" class="btn btn-outline select-payment" data-payment="cashapp">Select CashApp</a>
                     </div>
                 </div>
 
@@ -398,6 +398,13 @@
 
                 // Check if both service and payment are selected
                 checkFormReadiness();
+
+                // Direct user to payment link in a new tab
+                if (selectedPayment === 'paypal') {
+                    window.open('https://paypal.me/uma64', '_blank');
+                } else if (selectedPayment === 'cashapp') {
+                    window.open('https://cash.app/$cocoji', '_blank');
+                }
             });
         });
 
