@@ -217,20 +217,23 @@
                         <i class="fas fa-clock"></i>
                         <h4>Half Hour Session</h4>
                         <div class="service-price">$111</div>
-                        <p>30-minute virtual session with Dr. Corynna Clarke</p>
+                        <p>One 30-minute virtual session with Dr. Corynna Clarke</p>
                     </div>
                     <div class="service-option" data-service="full-hour" data-price="200">
                         <i class="fas fa-hourglass-half"></i>
                         <h4>Full Hour Session</h4>
                         <div class="service-price">$200</div>
-                        <p>60-minute virtual session with Dr. Corynna Clarke</p>
+                        <p>Two 30-minute virtual sessions with Dr. Corynna Clarke<br><small style="color:#8a2be2;font-weight:500;">(Can be divided into separate sessions)</small></p>
                     </div>
                     <div class="service-option" data-service="two-hours" data-price="333">
                         <i class="fas fa-hourglass"></i>
                         <h4>2 Hours Session</h4>
                         <div class="service-price">$333</div>
-                        <p>120-minute virtual session with Dr. Corynna Clarke</p>
+                        <p>Four 30-minute virtual sessions with Dr. Corynna Clarke<br><small style="color:#8a2be2;font-weight:500;">(Can be divided into separate sessions)</small></p>
                     </div>
+                </div>
+                <div class="service-note" style="margin-top: 20px; padding: 15px; background-color: rgba(138, 43, 226, 0.1); border-left: 4px solid var(--primary-color); border-radius: 4px;">
+                    <p style="margin: 0; font-size: 0.95em;"><strong>Flexible Session Scheduling:</strong> All sessions are structured as 30-minute segments. You can schedule them consecutively for a longer experience or divide them into separate appointments at your convenience.</p>
                 </div>
             </div>
 
@@ -240,12 +243,20 @@
 
                 <!-- First row with PayPal and CashApp -->
                 <div class="payment-options-row">
+                    <div class="payment-card" data-payment="zelle">
+                        <div class="payment-icon">
+                            <img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:3em; margin-bottom:10px;">
+                        </div>
+                        <h4 class="payment-title">Zelle <span style="color:#4CAF50;font-size:0.9em;">(Recommended)</span></h4>
+                        <p class="payment-description">Send payment to <strong>702.890.5469</strong> via your banking app or Zelle app.</p>
+                        <a href="zelle://pay?recipient=7028905469" class="btn btn-outline select-payment" data-payment="zelle">Select Zelle</a>
+                    </div>
                     <div class="payment-card" data-payment="paypal">
                         <div class="payment-icon">
                             <i class="fab fa-paypal"></i>
                         </div>
                         <h4 class="payment-title">PayPal</h4>
-                        <p class="payment-description">Pay securely using your PayPal account</p>
+                        <p class="payment-description">Pay securely using your PayPal account<br><span style="color:#e57373;font-size:0.95em;">* Please add $6 to cover PayPal fees</span></p>
                         <a href="https://paypal.me/uma64" class="btn btn-outline select-payment" data-payment="paypal">Select PayPal</a>
                     </div>
                     <div class="payment-card" data-payment="cashapp">
@@ -253,7 +264,7 @@
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                         <h4 class="payment-title">CashApp</h4>
-                        <p class="payment-description">Quick and easy payments with CashApp</p>
+                        <p class="payment-description">Quick and easy payments with CashApp<br><span style="color:#e57373;font-size:0.95em;">* Please add $6 to cover CashApp fees</span></p>
                         <a href="https://cash.app/$cocoji" class="btn btn-outline select-payment" data-payment="cashapp">Select CashApp</a>
                     </div>
                 </div>
@@ -329,16 +340,15 @@
             <div class="footer-column">
                 <h3>Payment Options</h3>
                 <ul class="footer-links">
-                    <li><a href="https://paypal.me/sutras" target="_blank"><i class="fab fa-paypal"></i> PayPal</a></li>
-                    <li><a href="https://cash.app/$cocoji" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp</a></li>
-                    <li><a href="https://venmo.com/@drcorynna-clarke" target="_blank"><i class="fab fa-vimeo-v"></i> Venmo</a></li>
+                    <li><a href="zelle://pay?recipient=7028905469" target="_blank"><img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Zelle <span style="color:#4CAF50;font-weight:bold;">(Recommended)</span></a></li>
+                    <li><a href="https://paypal.me/sutras" target="_blank"><i class="fab fa-paypal"></i> PayPal <span style="color:#e57373;font-size:0.95em;">+ $6 fee</span></a></li>
+                    <li><a href="https://cash.app/$cocoji" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp <span style="color:#e57373;font-size:0.95em;">+ $6 fee</span></a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Other Links</h3>
                 <ul class="footer-links">
                     <li>IRL w/Dr C</li>
-                    <li>MateCoach </li>
                     <li>
                         <a href="https://sacrederos.com/listing/uma-parvati-tantra-educator/" target="_blank">Sacrederos</a>
                     </li>
@@ -354,10 +364,7 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+
 
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -435,7 +442,9 @@
                 checkFormReadiness();
 
                 // Direct user to payment link in a new tab
-                if (selectedPayment === 'paypal') {
+                if (selectedPayment === 'zelle') {
+                    window.open('zelle://pay?recipient=7028905469', '_blank');
+                } else if (selectedPayment === 'paypal') {
                     window.open('https://paypal.me/uma64', '_blank');
                 } else if (selectedPayment === 'cashapp') {
                     window.open('https://cash.app/$cocoji', '_blank');
@@ -507,14 +516,14 @@
 
             // Redirect to appropriate payment method
             switch(selectedPayment) {
+                case 'zelle':
+                    window.location.href = 'zelle://pay?recipient=7028905469';
+                    break;
                 case 'paypal':
-                    window.location.href = `https://paypal.me/sutras/${servicePrice}`;
+                    window.location.href = `https://paypal.me/sutras/${parseInt(servicePrice) + 6}`;
                     break;
                 case 'cashapp':
                     window.location.href = 'https://cash.app/$cocoji';
-                    break;
-                case 'venmo':
-                    window.location.href = 'https://venmo.com/@drcorynna-clarke';
                     break;
             }
 
