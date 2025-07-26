@@ -249,7 +249,7 @@
                         </div>
                         <h4 class="payment-title">Zelle <span style="color:#4CAF50;font-size:0.9em;">(Recommended)</span></h4>
                         <p class="payment-description">Send payment to <strong>702.890.5469</strong> via your banking app or Zelle app.</p>
-                        <a href="zelle://pay?recipient=7028905469" class="btn btn-outline select-payment" data-payment="zelle">Select Zelle</a>
+                        <a href="zelle.html" class="btn btn-outline select-payment" data-payment="zelle">Select Zelle</a>
                     </div>
                     <div class="payment-card" data-payment="paypal">
                         <div class="payment-icon">
@@ -340,7 +340,7 @@
             <div class="footer-column">
                 <h3>Payment Options</h3>
                 <ul class="footer-links">
-                    <li><a href="zelle://pay?recipient=7028905469" target="_blank"><img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Zelle <span style="color:#4CAF50;font-weight:bold;">(Recommended)</span></a></li>
+                    <li><a href="zelle.html"><img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Zelle <span style="color:#4CAF50;font-weight:bold;">(Recommended)</span></a></li>
                     <li><a href="https://paypal.me/sutras" target="_blank"><i class="fab fa-paypal"></i> PayPal <span style="color:#e57373;font-size:0.95em;">+ $6 fee</span></a></li>
                     <li><a href="https://cash.app/$cocoji" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp <span style="color:#e57373;font-size:0.95em;">+ $6 fee</span></a></li>
                 </ul>
@@ -446,9 +446,9 @@
                 // Check if both service and payment are selected
                 checkFormReadiness();
 
-                // Direct user to payment link in a new tab
+                // Direct user to payment link
                 if (selectedPayment === 'zelle') {
-                    window.open('zelle://pay?recipient=7028905469', '_blank');
+                    window.location.href = 'zelle.html';
                 } else if (selectedPayment === 'paypal') {
                     window.open('https://paypal.me/uma64', '_blank');
                 } else if (selectedPayment === 'cashapp') {
@@ -522,7 +522,7 @@
             // Redirect to appropriate payment method
             switch(selectedPayment) {
                 case 'zelle':
-                    window.location.href = 'zelle://pay?recipient=7028905469';
+                    window.location.href = 'zelle.html';
                     break;
                 case 'paypal':
                     window.location.href = `https://paypal.me/sutras/${parseInt(servicePrice) + 6}`;
