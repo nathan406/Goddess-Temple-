@@ -25,8 +25,9 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#fmty" class="nav-link">FMTY</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -50,7 +51,167 @@
             </div>
         </div>
     </section>
-    <!-- Travel Schedule Section -->
+
+            <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>About Dr. C</h2>
+            </div>
+            <div class="about-content" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 800px; margin: 0 auto;">
+                <div class="about-image" data-aos="fade-up">
+                    <img src="assets/images/Dr_Corynna_Clarke_1.jpg" alt="Dr C" class="about-image-main" style="width: 100%; max-width: 500px; height: auto; margin-bottom: 2rem;">
+                </div>
+                <div class="about-text" data-aos="fade-up">
+                    <p style="font-size: 1.1rem; line-height: 1.8;">Dr C holds a Doctor of Divinity in Spiritual Counseling. Her holistic approach includes being a Health Practitioner, Certified Tantric Educator, and extensive studies in Sexology, as well as various modalities of bodywork and transformational sexual healing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Gallery</h2>
+            </div>
+            <div class="gallery-container" style="display: grid; gap: 1.5rem; padding: 1rem; justify-content: center; max-width: 1200px; margin: 0 auto;">
+                <style>
+                    /* Default for large screens - 4 columns */
+                    .gallery-container {
+                        grid-template-columns: repeat(4, minmax(250px, 1fr));
+                    }
+                    
+                    /* Medium screens - 2 columns */
+                    @media (max-width: 992px) {
+                        .gallery-container {
+                            grid-template-columns: repeat(2, minmax(300px, 1fr));
+                            padding: 1rem 2rem;
+                            gap: 2rem;
+                        }
+                    }
+                    
+                    /* Small screens - 1 column */
+                    @media (max-width: 576px) {
+                        .gallery-container {
+                            grid-template-columns: minmax(300px, 1fr);
+                            padding: 1rem;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    @media (max-width: 320px) {
+                        .gallery-container {
+                            grid-template-columns: 1fr;
+                            padding: 0.5rem;
+                        }
+                    }
+
+                    .gallery-item {
+                        aspect-ratio: 4/5;
+                        overflow: hidden;
+                        width: 100%;
+                        margin: 0 auto;
+                        border-radius: 8px;
+                    }
+
+                    .gallery-item img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        background-color: rgba(0, 0, 0, 0.02);
+                        transition: transform 0.3s ease;
+                    }
+
+                    .gallery-item:hover img {
+                        transform: scale(1.05);
+                    }
+                </style>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/images/Dr_Corynna_Clarke_2.jpg" alt="Dr Corynna Clarke">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/images/Dr_Corynna_Clarke_3.jpg" alt="Dr Corynna Clarke">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/images/Dr_Corynna_Clarke_4.jpg" alt="Dr Corynna Clarke">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="assets/images/Dr_Corynna_Clarke_5.jpg" alt="Dr Corynna Clarke">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="video-container" data-aos="fade-up">
+                <video src="assets/videos/Dr_Corynna_Clarke_Video.mp4" controls></video>
+            </div>
+        </div>
+    </section>
+
+    
+
+      <!-- FMTY Section -->
+    <section id="fmty" class="fmty">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2><i class="fas fa-plane"></i> FMTY</h2>
+            </div>
+            <div class="section-content" data-aos="fade-up">
+                <p>(Fly Me to You) Dr C is available to be sponsored to You location worldwide for the price of first class, round-trip airfare, and at least one of the (2.5hrs or longer) ceremonies is on Her offerings menu</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Availability Section -->
+    <section id="availability" class="availability">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2><i class="fas fa-calendar-alt"></i> Availability</h2>
+            </div>
+            <div class="section-content" data-aos="fade-up">
+                <p>Dr C is available for <strong>virtual online consultations</strong> she travels extensively and is passport ready and available for world travel to your destination.</p>
+                <p><strong>Goddesses (women and those identifying as female) SAVE over 50%!</strong> Virtual sessions start at $60/hr, and in-person sessions are $222 for 2 hours for women and those identifying as female.</p>
+                <p>For a menu of offerings, <a href="mailto:umaparvati702@gmail.com">EMAIL</a> or text <a href="sms:7028905469">702.890.5469</a>. Please contact with your name, desired time, duration, and location.</p>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- Workshops Section -->
+    <section id="workshops" class="workshops">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2><i class="fas fa-users"></i> Workshops</h2>
+            </div>
+            <div class="section-content" data-aos="fade-up">
+                <p>Dr C is available for weekend workshops, seminars, and trainings all over the world. Please inquire for further information.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Tantra Section -->
+    <section id="quantum-tantra" class="quantum-tantra">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2><i class="fas fa-infinity"></i> Quantum Tantra Offerings</h2>
+            </div>
+            <div class="section-content" data-aos="fade-up">
+                <p>Experience transformational sexual healing through various modalities of bodywork and tantric practices. Dr C's approach integrates spiritual counseling with tantric education for a holistic experience.</p>
+            </div>
+        </div>
+    </section>    <!-- Travel Schedule Section -->
     <section id="travel-schedule" class="travel-schedule">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -66,35 +227,8 @@
             </div>
         </div>
     </section>
-    <!-- Advance Discounts Section -->
-    <section id="advance-discounts" class="advance-discounts">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Advance Discounts</h2>
-            </div>
-            <div class="discounts-content" data-aos="fade-right">
-                <p>When you schedule your appointment in advance, it helps Dr C be ready, book accommodations, and plan your time together, giving you the <strong>BEST</strong> session possible. This allows Her to pass savings along to you!</p>
-                <p>&nbsp;</p>
-                <p>These are Dr C's advanced scheduling discounts:</p>
-                <p>&nbsp;</p>
-                <ul class="discounts-list">
-                    <li>Schedule 48 hrs ahead: <strong>Save $25</strong></li>
-                    <li>3 days ahead: <strong>Save $33</strong></li>
-                    <li>4 days ahead: <strong>Save $44</strong></li>
-                    <li>5 days ahead: <strong>Save $55</strong></li>
-                    <li>6 days ahead: <strong>Save $66</strong></li>
-                    <li>1 week ahead: <strong>Save $77</strong></li>
-                    <li>1.5 weeks ahead: <strong>Save $88</strong></li>
-                    <li>2 weeks ahead: <strong>Save $100</strong></li>
-                    <li>2.5 weeks ahead: <strong>Save $120</strong></li>
-                    <li>3 weeks ahead: <strong>Save $150</strong></li>
-                    <li>1 month ahead: <strong>Save $200</strong></li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
+     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -132,114 +266,106 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Advance Discounts Section -->
+    <section id="advance-discounts" class="advance-discounts">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>About Dr. C</h2>
+                <h2>Advance Discounts</h2>
             </div>
-            
-            <!-- Introduction with images -->
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
-                    <div class="about-intro">
-                        <p><strong>Dr C</strong> holds a Doctor of Divinity in Spiritual Counseling. Her holistic approach includes being a Health Practitioner, Certified Tantric Educator, and extensive studies in Sexology, as well as various modalities of bodywork and transformational sexual healing.</p>
-                    </div>
-
-                    <!-- Availability Section -->
-                    <div class="about-category" data-aos="fade-up" data-aos-delay="100">
-                        <h3><i class="fas fa-calendar-alt"></i> Availability</h3>
-                        <div class="category-content">
-                            <p>Dr C is available for <strong>virtual online consultations</strong> she travels extensively and is passport ready and available for world travel to your destination.</p>
-                            <p><strong>Goddesses (women and those identifying as female) SAVE over 50%!</strong> Virtual sessions start at $60/hr, and in-person sessions are $222 for 2 hours for women and those identifying as female.</p>
-                            <p>For a menu of offerings, <a href="mailto:umaparvati702@gmail.com">EMAIL</a> or text <a href="sms:7028905469">702.890.5469</a>. Please contact with your name, desired time, duration, and location.</p>
-                        </div>
-                    </div>
-
-                    <!-- FMTY Section -->
-                    <div class="about-category" data-aos="fade-up" data-aos-delay="200">
-                        <h3><i class="fas fa-plane"></i> FMTY</h3>
-                        <div class="category-content">
-                            <p>Dr C is passport ready and available for world travel. <strong>Dr C's regular offerings start at $555.</strong></p>
-                            <p>For safety and protection, a deposit is required, and this is non-negotiable! If you don't trust Dr C with a deposit, <strong>PLEASE</strong> don't bother contacting Her, as trust is the foundation of any good relationship.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-images" data-aos="fade-left">
-                    <img src="assets/images/Dr_Corynna_Clarke_1.jpg" alt="Dr C" class="about-image-main">
-                </div>
-            </div>
-
-            <!-- Second row with remaining categories and second image -->
-            <div class="about-content-second" data-aos="fade-up" data-aos-delay="300">
-                <div class="about-categories-side">
-                    <!-- Workshops Section -->
-                    <div class="about-category" data-aos="fade-up" data-aos-delay="300">
-                        <h3><i class="fas fa-users"></i> Workshops</h3>
-                        <div class="category-content">
-                            <p>Dr C is available for weekend workshops, seminars, and trainings all over the world. Please inquire for further information.</p>
-                        </div>
-                    </div>
-
-                    <!-- Quantum Tantra Offerings Section -->
-                    <div class="about-category" data-aos="fade-up" data-aos-delay="400">
-                        <h3><i class="fas fa-infinity"></i> Quantum Tantra Offerings</h3>
-                        <div class="category-content">
-                            <p>Experience transformational sexual healing through various modalities of bodywork and tantric practices. Dr C's approach integrates spiritual counseling with tantric education for a holistic experience.</p>
-                        </div>
-                    </div>
-
-                    <!-- Personalized Consultations Section -->
-                    <div class="about-category" data-aos="fade-up" data-aos-delay="500">
-                        <h3><i class="fas fa-heart"></i> Personalized Consultations</h3>
-                        <div class="category-content">
-                            <p>Dr C prides herself on tailoring her consultations to the specific needs and desires of each person. She appreciates you taking the time to get in touch and share more about yourself, your desires, and whatever can help Her to create the most perfect experience for you.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image-second">
-                    <img src="assets/images/Dr_Corynna_Clarke_2.jpg" alt="Dr C" class="about-image-secondary">
-                </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="about-cta" data-aos="fade-up" data-aos-delay="600">
-                <p><strong>Free resources:</strong> Watch Dr. C's free YouTube videos!</p>
-                <a href="https://youtube.com/@goddesstemple528?si=mbRF4iONcySXU84D" class="btn" target="_blank">
-                    <i class="fab fa-youtube"></i> Watch Videos
-                </a>
+            <div class="discounts-content" data-aos="fade-right">
+                <p>When you schedule your appointment in advance, it helps Dr C be ready, book accommodations, and plan your time together, giving you the <strong>BEST</strong> session possible. This allows Her to pass savings along to you!</p>
+                <p>&nbsp;</p>
+                <p>These are Dr C's advanced scheduling discounts:</p>
+                <p>&nbsp;</p>
+                <ul class="discounts-list">
+                    <li>Schedule 48 hrs ahead: <strong>Save $25</strong></li>
+                    <li>3 days ahead: <strong>Save $33</strong></li>
+                    <li>4 days ahead: <strong>Save $44</strong></li>
+                    <li>5 days ahead: <strong>Save $55</strong></li>
+                    <li>6 days ahead: <strong>Save $66</strong></li>
+                    <li>1 week ahead: <strong>Save $77</strong></li>
+                    <li>1.5 weeks ahead: <strong>Save $88</strong></li>
+                    <li>2 weeks ahead: <strong>Save $100</strong></li>
+                    <li>2.5 weeks ahead: <strong>Save $120</strong></li>
+                    <li>3 weeks ahead: <strong>Save $150</strong></li>
+                    <li>1 month ahead: <strong>Save $200</strong></li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <!-- Additional Resources Section -->
+    <section id="resources" class="resources">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Gallery</h2>
+                <h2>Additional Resources</h2>
             </div>
-            <div class="gallery-container">
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/images/Dr_Corynna_Clarke_3.jpg" alt="Dr Corynna Clarke">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/images/Dr_Corynna_Clarke_4.jpg" alt="Dr Corynna Clarke">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/images/Dr_Corynna_Clarke_5.jpg" alt="Dr Corynna Clarke">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+            <!-- YouTube Resources -->
+            <div class="resources-content" data-aos="fade-up" style="text-align: center; margin-bottom: 3rem;">
+                <div class="resource-card" style="background: #f8f0ff; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+                    <h3 style="color: #8a2be2; margin-bottom: 1rem;">Free resources:</h3>
+                    <p style="margin-bottom: 1.5rem;">Watch Dr. C's free YouTube videos!</p>
+                    <a href="https://youtube.com/@goddesstemple528?si=mbRF4iONcySXU84D" class="btn btn-animated" target="_blank" style="background: #8a2be2;">
+                        <i class="fab fa-youtube"></i> Watch Videos
+                    </a>
                 </div>
             </div>
-            <div class="video-container" data-aos="fade-up">
-                <video src="assets/videos/Dr_Corynna_Clarke_Video.mp4" controls></video>
+
+            <!-- Additional Platforms -->
+            <div class="platform-cards" style="display: grid; gap: 2rem; margin: 2rem auto; width: 100%; max-width: 1200px;">
+                <style>
+                    .platform-cards {
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        padding: 0 1rem;
+                        width: 100%;
+                        box-sizing: border-box;
+                    }
+
+                    @media (max-width: 768px) {
+                        .platform-cards {
+                            grid-template-columns: 1fr;
+                            max-width: 500px;
+                            margin: 2rem auto;
+                        }
+                    }
+
+                    @media (max-width: 320px) {
+                        .platform-cards {
+                            padding: 0 0.75rem;
+                            margin: 1.5rem auto;
+                        }
+                        .platform-card {
+                            padding: 1.5rem 1rem !important;
+                            margin: 0 auto;
+                            width: 100%;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    .platform-card {
+                        margin: 0 auto;
+                        width: 100%;
+                        max-width: 400px;
+                        box-sizing: border-box;
+                    }
+                </style>
+                <!-- Quantum Tantric -->
+                <div class="platform-card" data-aos="fade-up" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #6b3fa0, #8a2be2); border-radius: 10px; color: white;">
+                    <h3 style="margin-bottom: 1rem;color:white">Quantum Tantric</h3>
+                    <p style="margin-bottom: 1.5rem;">Experience the quantum realm of tantric healing and transformation</p>
+                    <a href="https://www.quantumtantric.com/" class="btn btn-outline" target="_blank" style="border-color: white; color: white;">
+                        Visit Platform
+                    </a>
+                </div>
+
+                <!-- Goddess Unveiled -->
+                <div class="platform-card" data-aos="fade-up" data-aos-delay="100" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #c471ed, #f64f59); border-radius: 10px; color: white;">
+                    <h3 style="margin-bottom: 1rem; color:white">Goddess Unveiled</h3>
+                    <p style="margin-bottom: 1.5rem;">Comprehensive Sex Education & Wellness Resources</p>
+                    <a href="https://goddessunveiled.com/" class="btn btn-outline" target="_blank" style="border-color: white; color: white;">
+                        Explore More
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -250,37 +376,14 @@
             <div class="section-title" data-aos="fade-up">
                 <h2>Get In Touch</h2>
             </div>
-            <div class="contact-container">
-                <div class="contact-info" data-aos="fade-right">
+            <div class="contact-container" style="display: flex; justify-content: center; align-items: center;">
+                <div class="contact-info" data-aos="fade-up" style="text-align: center;">
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" style="font-size: 2rem; color: #8a2be2; margin-bottom: 1rem;"></i>
                         <h3>Email</h3>
-                        <p><a href="mailto:umaparvati702@gmail.com">umaparvati702@gmail.com</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Location</h3>
-                        <p>Texas</p>
+                        <p><a href="mailto:umaparvati702@gmail.com" style="font-size: 1.1rem; color: #333; text-decoration: none; transition: color 0.3s;">umaparvati702@gmail.com</a></p>
                     </div>
                 </div>
-                <!-- Original email: umaparvati702@gmail.com -->
-                <form class="contact-form" data-aos="fade-left" action="https://formspree.io/f/xleqgwkz" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="_replyto" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <input type="hidden" name="_subject" value="New Contact Form Submission from Goddess Temple">
-                    <input type="text" name="_gotcha" style="display:none">
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
