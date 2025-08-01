@@ -60,7 +60,6 @@
             </div>
             <div class="travel-content" data-aos="fade-right">
                 <ul class="travel-list">
-                    <li><strong>Dallas, TX:</strong> Now – Aug 1</li>
                     <li><strong>Austin:</strong> Aug 2 – Aug 30</li>
                     <li><strong>Houston:</strong> Sept 1 – Sept 27</li>
                     <li><strong>Vegas:</strong> Sept 28 – Oct 15</li>
@@ -333,55 +332,186 @@
             <div class="platform-cards" style="display: grid; gap: 2rem; margin: 2rem auto; width: 100%; max-width: 1200px;">
                 <style>
                     .platform-cards {
-                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        grid-template-columns: repeat(3, 1fr);
                         padding: 0 1rem;
                         width: 100%;
                         box-sizing: border-box;
+                        gap: 2rem;
                     }
 
+                    /* Video section spans full width */
+                    .goddess-unveiled-video {
+                        grid-column: 1 / -1;
+                        max-width: 700px;
+                        margin: 0 auto 3rem auto;
+                    }
+
+                    /* Platform cards in a row */
+                    .platform-card {
+                        margin: 0 auto;
+                        width: 100%;
+                        max-width: 350px;
+                        box-sizing: border-box;
+                    }
+
+                    /* Tablet view - stack video and cards */
+                    @media (max-width: 992px) {
+                        .platform-cards {
+                            grid-template-columns: 1fr;
+                            max-width: 600px;
+                            margin: 2rem auto;
+                            gap: 2rem;
+                        }
+                        
+                        .goddess-unveiled-video {
+                            grid-column: 1;
+                            margin-bottom: 2rem;
+                        }
+                        
+                        .platform-card {
+                            max-width: 500px;
+                        }
+                    }
+
+                    /* Mobile view - everything stacked */
                     @media (max-width: 768px) {
                         .platform-cards {
                             grid-template-columns: 1fr;
                             max-width: 500px;
-                            margin: 2rem auto;
+                            margin: 1.5rem auto;
+                            gap: 1.5rem;
+                        }
+                        
+                        .goddess-unveiled-video {
+                            margin-bottom: 1.5rem;
+                            max-width: 100%;
+                        }
+                        
+                        .goddess-unveiled-video > div {
+                            padding: 1rem 1rem 1.5rem 1rem !important;
+                        }
+                        
+                        .goddess-unveiled-video h3 {
+                            font-size: 1.4rem !important;
+                            margin-bottom: 0.5rem !important;
+                        }
+                        
+                        .goddess-unveiled-video p {
+                            font-size: 0.9rem !important;
+                            margin-bottom: 1rem !important;
+                        }
+                        
+                        .goddess-unveiled-video a {
+                            font-size: 0.9rem !important;
+                            padding: 8px 20px !important;
+                        }
+                        
+                        .platform-card {
+                            padding: 1.5rem 1rem !important;
+                            max-width: 100%;
+                        }
+                    }
+
+                    @media (max-width: 480px) {
+                        .goddess-unveiled-video {
+                            max-width: 100%;
+                        }
+                        
+                        .goddess-unveiled-video > div {
+                            padding: 0.75rem 0.75rem 1rem 0.75rem !important;
+                        }
+                        
+                        .goddess-unveiled-video h3 {
+                            font-size: 1.2rem !important;
+                            margin-bottom: 0.4rem !important;
+                        }
+                        
+                        .goddess-unveiled-video p {
+                            font-size: 0.85rem !important;
+                            margin-bottom: 0.75rem !important;
+                        }
+                        
+                        .goddess-unveiled-video a {
+                            font-size: 0.85rem !important;
+                            padding: 6px 16px !important;
                         }
                     }
 
                     @media (max-width: 320px) {
                         .platform-cards {
                             padding: 0 0.75rem;
-                            margin: 1.5rem auto;
+                            margin: 1rem auto;
+                            gap: 1rem;
                         }
-                        .platform-card {
-                            padding: 1.5rem 1rem !important;
-                            margin: 0 auto;
-                            width: 100%;
-                            box-sizing: border-box;
+                        
+                        .goddess-unveiled-video > div {
+                            padding: 0.5rem 0.5rem 0.75rem 0.5rem !important;
                         }
-                    }
-
-                    .platform-card {
-                        margin: 0 auto;
-                        width: 100%;
-                        max-width: 400px;
-                        box-sizing: border-box;
+                        
+                        .goddess-unveiled-video h3 {
+                            font-size: 1.1rem !important;
+                            margin-bottom: 0.3rem !important;
+                        }
+                        
+                        .goddess-unveiled-video p {
+                            font-size: 0.8rem !important;
+                            margin-bottom: 0.5rem !important;
+                        }
+                        
+                        .goddess-unveiled-video a {
+                            font-size: 0.8rem !important;
+                            padding: 5px 12px !important;
+                        }
                     }
                 </style>
-                <!-- Quantum Tantric -->
+              
+
+
+
+                <!-- Goddess Unveiled Video -->
+                <div class="goddess-unveiled-video" data-aos="fade-up" data-aos-delay="100" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #c471ed, #f64f59); border-radius: 10px; color: white; grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
+                    <h3 style="margin-bottom: 1rem; color:white; font-size: 1.8rem;">Goddess Unveiled</h3>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem;"> </p>
+                    <div style="position: relative; border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem;">
+                        <video 
+                            src="assets/videos/godessunveiled.mp4" 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline
+                            style="width: 100%; height: auto; display: block;"
+                            onloadstart="this.volume=0">
+                        </video>
+                    </div>
+                    <a href="https://goddessunveiled.com/" class="btn btn-outline" target="_blank" style="border-color: white; color: white; font-size: 1.1rem; padding: 12px 30px;">
+                        Explore More
+                    </a>
+                </div>
+
+                  <!-- Quantum Tantric -->
                 <div class="platform-card" data-aos="fade-up" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #6b3fa0, #8a2be2); border-radius: 10px; color: white;">
-                    <h3 style="margin-bottom: 1rem;color:white">Quantum Tantric</h3>
+                    <h3 style="margin-bottom: 1rem;color:white">Quantum Tantric Arts</h3>
                     <p style="margin-bottom: 1.5rem;">Experience the quantum realm of tantric healing and transformation</p>
                     <a href="https://www.quantumtantric.com/" class="btn btn-outline" target="_blank" style="border-color: white; color: white;">
                         Visit Platform
                     </a>
                 </div>
 
-                <!-- Goddess Unveiled -->
-                <div class="platform-card" data-aos="fade-up" data-aos-delay="100" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #c471ed, #f64f59); border-radius: 10px; color: white;">
-                    <h3 style="margin-bottom: 1rem; color:white">Goddess Unveiled</h3>
-                    <p style="margin-bottom: 1.5rem;">Comprehensive Sex Education & Wellness Resources</p>
-                    <a href="https://goddessunveiled.com/" class="btn btn-outline" target="_blank" style="border-color: white; color: white;">
-                        Explore More
+                <!-- P411 -->
+                <div class="platform-card" data-aos="fade-up" data-aos-delay="200" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #ff6b6b, #ee5a24); border-radius: 10px; color: white;">
+                    <h3 style="margin-bottom: 1rem; color:white">P411</h3>
+                    <p style="margin-bottom: 1.5rem;">Professional verification and screening platform for enhanced safety and discretion</p>
+                    <a href="https://preferred411.com/P127287" class="btn btn-outline" target="_blank" style="border-color: white; color: white;">
+                        Visit P411
+                    </a>
+                </div>
+
+                <!-- Sacred Eros -->
+                <div class="platform-card" data-aos="fade-up" data-aos-delay="300" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 10px; color: white;">
+                    <h3 style="margin-bottom: 1rem; color:white">Sacred Eros</h3>
+                    <p style="margin-bottom: 1.5rem;">Explore sacred sexuality and tantric healing with Dr C</p>
+                    <a href="https://sacrederos.com/listing/uma-parvati-tantra-educator/" class="btn btn-outline" target="_blank" style="border-color: white; color: white;">
+                        Visit Sacred Eros
                     </a>
                 </div>
             </div>
