@@ -27,31 +27,19 @@
         }
 
         .payment-options-row {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .payment-card {
-            flex: 0 0 calc(50% - 30px);
-            max-width: 350px;
-            min-width: 280px;
-        }
-
-        .payment-options-row.second-row {
-            justify-content: center;
-        }
-
-        .payment-options-row.second-row .payment-card {
-            flex: 0 0 350px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @media (max-width: 768px) {
-            .payment-card {
-                flex: 0 0 100%;
-                margin-bottom: 20px;
+            .payment-options-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
@@ -76,9 +64,23 @@
         }
 
         .payment-icon {
-            font-size: 3rem;
+            font-size: 4rem;
             color: var(--primary-color);
             margin-bottom: 20px;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .payment-icon img {
+            height: 4rem !important;
+            width: auto !important;
+            max-width: 4rem !important;
+        }
+
+        .payment-icon i {
+            font-size: 4rem !important;
         }
 
         .payment-title {
@@ -180,6 +182,20 @@
             margin-top: 20px;
             text-align: center;
         }
+
+        .venmo-icon {
+            width: 4rem;
+            height: 4rem;
+            background: #8a2be2;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -240,14 +256,19 @@
             <!-- Step 2: Payment Method -->
             <div class="payment-options-container" data-aos="fade-up">
                 <h3>Step 2: Select Payment Method</h3>
+                
+                <!-- Why Zelle is Preferred Info -->
+                <div style="background-color: rgba(76, 175, 80, 0.1); border-left: 4px solid #4CAF50; padding: 15px; margin-bottom: 30px; border-radius: 4px;">
+                    <p style="margin: 0; font-size: 0.95em; color: #2E7D32;"><strong>Why Zelle is Preferred:</strong> Zelle is instant, free, and funds can't be held - ensuring the fastest and most secure transaction for both parties.</p>
+                </div>
 
-                <!-- First row with PayPal and CashApp -->
+                <!-- First row with Zelle and PayPal -->
                 <div class="payment-options-row">
                     <div class="payment-card" data-payment="zelle">
                         <div class="payment-icon">
-                            <img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:3em; margin-bottom:10px;">
+                            <img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:4rem; width:auto; max-width:4rem;">
                         </div>
-                        <h4 class="payment-title">Zelle <span style="color:#4CAF50;font-size:0.9em;">(Preferred)</span></h4>
+                        <h4 class="payment-title">Zelle <span style="color:#4CAF50;font-size:0.9em;">(Recommended)</span></h4>
                         <p class="payment-description">Send payment to <strong>702.890.5469</strong> via your banking app or Zelle app.</p>
                         <a href="zelle.html" class="btn btn-outline select-payment" data-payment="zelle">Select Zelle</a>
                     </div>
@@ -255,31 +276,31 @@
                         <div class="payment-icon">
                             <i class="fab fa-paypal"></i>
                         </div>
-                        <h4 class="payment-title">PayPal</h4>
+                        <h4 class="payment-title">PayPal <span style="color:#e57373;font-size:0.9em;">(+$6)</span></h4>
                         <p class="payment-description">Pay securely using your PayPal account<br><span style="color:#e57373;font-size:0.95em;">* Please add $6 to cover PayPal fees</span></p>
                         <a href="https://paypal.me/uma64" class="btn btn-outline select-payment" data-payment="paypal">Select PayPal</a>
                     </div>
+                </div>
+
+                <!-- Second row with CashApp and Venmo -->
+                <div class="payment-options-row">
                     <div class="payment-card" data-payment="cashapp">
                         <div class="payment-icon">
                             <i class="fas fa-dollar-sign"></i>
                         </div>
-                        <h4 class="payment-title">CashApp</h4>
+                        <h4 class="payment-title">CashApp <span style="color:#e57373;font-size:0.9em;">(+$6)</span></h4>
                         <p class="payment-description">Quick and easy payments with CashApp<br><span style="color:#e57373;font-size:0.95em;">* Please add $6 to cover CashApp fees</span></p>
                         <a href="https://cash.app/$cocoji" class="btn btn-outline select-payment" data-payment="cashapp">Select CashApp</a>
                     </div>
-                </div>
-
-                <!-- Second row with Venmo centered
-                <div class="payment-options-row second-row">
                     <div class="payment-card" data-payment="venmo">
                         <div class="payment-icon">
-                            <i class="fab fa-vimeo-v"></i>
+                            <div class="venmo-icon">V</div>
                         </div>
-                        <h4 class="payment-title">Venmo</h4>
-                        <p class="payment-description">Send money easily with Venmo</p>
-                        <a href="#" class="btn btn-outline select-payment" data-payment="venmo">Select Venmo</a>
+                        <h4 class="payment-title">Venmo <span style="color:#e57373;font-size:0.9em;">(+$6)</span></h4>
+                        <p class="payment-description">Send money easily with Venmo to <strong>@drcorynna-clarke</strong><br><span style="color:#e57373;font-size:0.95em;">* Please add $6 to cover Venmo fees</span></p>
+                        <a href="https://venmo.com/drcorynna-clarke" class="btn btn-outline select-payment" data-payment="venmo" target="_blank">Select Venmo</a>
                     </div>
-                </div> -->
+                </div>
             </div>
 
             <!-- Step 3: Checkout Form -->
@@ -340,15 +361,16 @@
             <div class="footer-column">
                 <h3>Payment Options</h3>
                 <ul class="footer-links">
-                    <li><a href="zelle.html"><img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Zelle <span style="color:#4CAF50;font-weight:bold;">(Recommended)</span></a></li>
-                    <li><a href="https://paypal.me/sutras" target="_blank"><i class="fab fa-paypal"></i> PayPal <span style="color:#e57373;font-size:0.95em;">+ $6 fee</span></a></li>
-                    <li><a href="https://cash.app/$cocoji" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp <span style="color:#e57373;font-size:0.95em;">+ $6 fee</span></a></li>
+                    <li><a href="zelle.html"><img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Zelle <span style="color:#81C784;font-weight:500;font-size:0.9em;">(Recommended)</span></a></li>
+                    <li><a href="https://paypal.me/sutras" target="_blank"><i class="fab fa-paypal"></i> PayPal <span style="color:#FFAB91;font-size:0.9em;">(+$6)</span></a></li>
+                    <li><a href="https://cash.app/$cocoji" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp <span style="color:#FFAB91;font-size:0.9em;">(+$6)</span></a></li>
+                    <li><a href="https://venmo.com/drcorynna-clarke" target="_blank"><span style="display:inline-block;width:1.2em;height:1.2em;background:#8a2be2;color:white;text-align:center;border-radius:3px;font-size:0.8em;line-height:1.2em;margin-right:6px;font-weight:bold;">V</span> Venmo <span style="color:#FFAB91;font-size:0.9em;">(+$6)</span></a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Other Links</h3>
                 <ul class="footer-links">
-                    <li>IRL w/Dr C</li>
+                    
                     <li>
                         <a href="https://www.quantumtantric.com/" target="_blank">
                             <img src="https://d1yei2z3i6k35z.cloudfront.net/13284685/685f9e710fa44_d62bee40-63ae-4c04-aca6-a290c0ceb192-removebg-preview.png" alt="Quantumtantric" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Quantumtantric
@@ -453,6 +475,8 @@
                     window.open('https://paypal.me/uma64', '_blank');
                 } else if (selectedPayment === 'cashapp') {
                     window.open('https://cash.app/$cocoji', '_blank');
+                } else if (selectedPayment === 'venmo') {
+                    window.open('https://venmo.com/drcorynna-clarke', '_blank');
                 }
             });
         });
@@ -483,6 +507,9 @@
             if (selectedPayment) {
                 let paymentName = '';
                 switch(selectedPayment) {
+                    case 'zelle':
+                        paymentName = 'Zelle';
+                        break;
                     case 'paypal':
                         paymentName = 'PayPal';
                         break;
@@ -529,6 +556,9 @@
                     break;
                 case 'cashapp':
                     window.location.href = 'https://cash.app/$cocoji';
+                    break;
+                case 'venmo':
+                    window.location.href = 'https://venmo.com/drcorynna-clarke';
                     break;
             }
 
