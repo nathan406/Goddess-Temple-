@@ -599,11 +599,12 @@ section {
 }
 
 .platform-card img {
-  width: 80px;
-  height: 80px;
+  width: 480px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 8px;
   margin-bottom: 15px;
+  max-width: 100%;
 }
 
 .platform-card h3 {
@@ -613,22 +614,25 @@ section {
 /* Platform card image responsiveness */
 @media (max-width: 768px) {
   .platform-card img {
-    width: 70px;
-    height: 70px;
+    width: 400px;
+    height: 267px;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .platform-card img {
-    width: 60px;
-    height: 60px;
+    width: 320px;
+    height: 213px;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 320px) {
   .platform-card img {
-    width: 50px;
-    height: 50px;
+    width: 280px;
+    height: 187px;
+    max-width: 100%;
   }
 }
 
