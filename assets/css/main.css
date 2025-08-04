@@ -1,75 +1,77 @@
 /* Center Advance Discounts and Travel Schedule sections */
 .advance-discounts .container,
 .travel-schedule .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .advance-discounts .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .advance-discounts .section-title {
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .advance-discounts .discounts-content {
-    text-align: left;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .travel-schedule .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .travel-schedule .section-title,
 .travel-schedule .travel-content {
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 
 .advance-discounts .section-title {
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .advance-discounts .discounts-content,
 .advance-discounts .discounts-content.aos-init,
 .advance-discounts .discounts-content.aos-animate {
-    text-align: left;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .travel-schedule .section-title,
 .travel-schedule .travel-content {
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .advance-discounts .discounts-list,
 .travel-schedule .travel-list {
-    display: inline-block;
-    text-align: left;
-    margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
 }
+
 /*
 * Goddess Temple - Main Stylesheet
 * Purple and white color scheme
@@ -106,7 +108,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -825,5 +832,43 @@ section {
 
   .gallery-container {
     grid-template-columns: 1fr;
+  }
+}
+
+/* YouTube content text size reduction for small screens */
+@media (max-width: 600px) {
+  .youtube-cta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .youtube-cta-text {
+    p {
+      font-size: 0.7rem !important;
+    }
+
+    .youtube-cta-text, .btn {
+      font-size: 0.7rem !important; 
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .youtube-content h3 {
+    font-size: 0.845rem !important;
+    /* 35% reduction from 1.3rem */
+
+  }
+
+  .youtube-content p {
+    font-size: 0.585rem !important;
+    /* 35% reduction from 0.9rem */
+  }
+
+  .youtube-content .btn {
+    font-size: 0.65rem !important;
+    /* 35% reduction from 1rem */
+    padding: 6px 13px !important;
+    /* Adjusted padding proportionally */
   }
 }

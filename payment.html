@@ -24,6 +24,7 @@
 
         .payment-options-container {
             margin-top: 40px;
+            
         }
 
         .payment-options-row {
@@ -196,6 +197,20 @@
             font-weight: bold;
             font-size: 1.5rem;
         }
+
+        .apple-pay-icon {
+            width: 4rem;
+            height: 4rem;
+            background: #8a2be2;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
     </style>
 </head>
 <body>
@@ -268,7 +283,7 @@
                         <div class="payment-icon">
                             <img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:4rem; width:auto; max-width:4rem;">
                         </div>
-                        <h4 class="payment-title">Zelle <span style="color:#4CAF50;font-size:0.9em;">(Recommended)</span></h4>
+                        <h4 class="payment-title">Zelle <span style="color:#4CAF50;font-size:0.9em;">(Preffered)</span></h4>
                         <p class="payment-description">Send payment to <strong>702.890.5469</strong> via your banking app or Zelle app.</p>
                         <a href="zelle.html" class="btn btn-outline select-payment" data-payment="zelle">Select Zelle</a>
                     </div>
@@ -296,9 +311,23 @@
                         <div class="payment-icon">
                             <div class="venmo-icon">V</div>
                         </div>
-                        <h4 class="payment-title">Venmo <span style="color:#e57373;font-size:0.9em;">(+$6)</span></h4>
-                        <p class="payment-description">Send money easily with Venmo to <strong>@drcorynna-clarke</strong><br><span style="color:#e57373;font-size:0.95em;">* Please add $6 to cover Venmo fees</span></p>
+                        <h4 class="payment-title">Venmo <span style="color:#e57373;font-size:0.9em;">(+$8)</span></h4>
+                        <p class="payment-description">Send money easily with Venmo to <strong>@drcorynna-clarke</strong><br><span style="color:#e57373;font-size:0.95em;">* Please add $8 to cover Venmo fees</span></p>
                         <a href="https://venmo.com/drcorynna-clarke" class="btn btn-outline select-payment" data-payment="venmo" target="_blank">Select Venmo</a>
+                    </div>
+                </div>
+
+                <!-- Third row with Apple Pay centered -->
+                <div class="payment-options-row" style="justify-content: center;">
+                    <div class="payment-card" data-payment="applepay" style="max-width: 400px;">
+                        <div class="payment-icon">
+                            <div class="apple-pay-icon">
+                                <i class="fab fa-apple"></i>
+                            </div>
+                        </div>
+                        <h4 class="payment-title">Apple Pay <span style="color:#e57373;font-size:0.9em;">(+$8)</span></h4>
+                        <p class="payment-description">Send payment to <strong>(702) 890-5469</strong> via Apple Pay<br><span style="color:#e57373;font-size:0.95em;">* Please add $8 to cover Apple Pay fees</span></p>
+                        <a href="#" class="btn btn-outline select-payment" data-payment="applepay">Select Apple Pay</a>
                     </div>
                 </div>
             </div>
@@ -361,10 +390,11 @@
             <div class="footer-column">
                 <h3>Payment Options</h3>
                 <ul class="footer-links">
-                    <li><a href="zelle.html"><img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Zelle <span style="color:#81C784;font-weight:500;font-size:0.9em;">(Recommended)</span></a></li>
+                    <li><a href="zelle.html"><img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Zelle <span style="color:#81C784;font-weight:500;font-size:0.9em;">(preferred)</span></a></li>
                     <li><a href="https://paypal.me/sutras" target="_blank"><i class="fab fa-paypal"></i> PayPal <span style="color:#FFAB91;font-size:0.9em;">(+$6)</span></a></li>
                     <li><a href="https://cash.app/$cocoji" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp <span style="color:#FFAB91;font-size:0.9em;">(+$6)</span></a></li>
-                    <li><a href="https://venmo.com/drcorynna-clarke" target="_blank"><span style="display:inline-block;width:1.2em;height:1.2em;background:#8a2be2;color:white;text-align:center;border-radius:3px;font-size:0.8em;line-height:1.2em;margin-right:6px;font-weight:bold;">V</span> Venmo <span style="color:#FFAB91;font-size:0.9em;">(+$6)</span></a></li>
+                    <li><a href="https://venmo.com/drcorynna-clarke" target="_blank"><span style="display:inline-block;width:1.2em;height:1.2em;background:#8a2be2;color:white;text-align:center;border-radius:3px;font-size:0.8em;line-height:1.2em;margin-right:6px;font-weight:bold;">V</span> Venmo <span style="color:#FFAB91;font-size:0.9em;">(+$8)</span></a></li>
+                    <li><a href="#" target="_blank"><span style="display:inline-block;width:1.2em;height:1.2em;background:#8a2be2;color:white;text-align:center;border-radius:3px;font-size:0.8em;line-height:1.2em;margin-right:6px;font-weight:bold;"><i class="fab fa-apple" style="font-size:0.7em;"></i></span> Apple Pay <span style="color:#FFAB91;font-size:0.9em;">(+$8)</span></a></li>
                 </ul>
             </div>
             <div class="footer-column">
