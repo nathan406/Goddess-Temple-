@@ -1,0 +1,195 @@
+ .payment-section {
+     padding-top: 120px;
+     min-height: 100vh;
+     background-color: var(--white);
+ }
+
+ .payment-options-container {
+     margin-top: 40px;
+
+ }
+
+ .payment-options-row {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 30px;
+     margin-bottom: 30px;
+     max-width: 800px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ @media (max-width: 768px) {
+     .payment-options-row {
+         grid-template-columns: 1fr;
+         gap: 20px;
+     }
+ }
+
+ .payment-card {
+     background-color: var(--white);
+     border-radius: 8px;
+     box-shadow: var(--shadow);
+     padding: 30px;
+     text-align: center;
+     transition: var(--transition);
+     border: 2px solid transparent;
+ }
+
+ .payment-card:hover {
+     transform: translateY(-10px);
+     border-color: var(--primary-color);
+ }
+
+ .payment-card.selected {
+     border-color: var(--primary-color);
+     background-color: rgba(138, 43, 226, 0.05);
+ }
+
+ .payment-icon {
+     font-size: 4rem;
+     color: var(--primary-color);
+     margin-bottom: 20px;
+     height: 4rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .payment-icon img {
+     height: 4rem !important;
+     width: auto !important;
+     max-width: 4rem !important;
+ }
+
+ .payment-icon i {
+     font-size: 4rem !important;
+ }
+
+ .payment-title {
+     font-size: 1.5rem;
+     margin-bottom: 15px;
+ }
+
+ .payment-description {
+     color: var(--dark-gray);
+     margin-bottom: 20px;
+ }
+
+ .service-selection {
+     margin-top: 40px;
+     background-color: var(--light-gray);
+     padding: 30px;
+     border-radius: 8px;
+ }
+
+ .service-options {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 20px;
+     margin-top: 20px;
+ }
+
+ .service-option {
+     background-color: var(--white);
+     border-radius: 8px;
+     padding: 20px;
+     text-align: center;
+     cursor: pointer;
+     transition: var(--transition);
+     border: 2px solid transparent;
+ }
+
+ .service-option:hover {
+     transform: translateY(-5px);
+ }
+
+ .service-option.selected {
+     border-color: var(--primary-color);
+     background-color: rgba(138, 43, 226, 0.05);
+ }
+
+ .service-price {
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: var(--primary-color);
+     margin: 10px 0;
+ }
+
+ .checkout-form {
+     margin-top: 40px;
+     background-color: var(--light-gray);
+     padding: 30px;
+     border-radius: 8px;
+     display: none;
+ }
+
+ .checkout-form.active {
+     display: block;
+     animation: fadeIn 0.5s ease-in-out;
+ }
+
+ .form-row {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 20px;
+     margin-bottom: 20px;
+ }
+
+ @media (max-width: 768px) {
+     .form-row {
+         grid-template-columns: 1fr;
+     }
+ }
+
+ .checkout-summary {
+     background-color: var(--white);
+     padding: 20px;
+     border-radius: 8px;
+     margin-bottom: 20px;
+ }
+
+ .summary-row {
+     display: flex;
+     justify-content: space-between;
+     padding: 10px 0;
+     border-bottom: 1px solid #eee;
+ }
+
+ .summary-row:last-child {
+     border-bottom: none;
+     font-weight: 700;
+ }
+
+ .proceed-payment {
+     margin-top: 20px;
+     text-align: center;
+ }
+
+ .venmo-icon {
+     width: 4rem;
+     height: 4rem;
+     background: #8a2be2;
+     border-radius: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto 20px auto;
+     color: white;
+     font-weight: bold;
+     font-size: 1.5rem;
+ }
+
+ .apple-pay-icon {
+     width: 4rem;
+     height: 4rem;
+     background: #8a2be2;
+     border-radius: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto 20px auto;
+     color: white;
+     font-weight: bold;
+     font-size: 1.8rem;
+ }
