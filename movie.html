@@ -55,7 +55,7 @@
                     <p style="margin: 0; font-size: 0.95em; color: #2E7D32;"><strong>Why Zelle is Preferred:</strong> Zelle is instant, free, and funds can't be held - ensuring the fastest and most secure transaction for both parties.</p>
                 </div>
 
-                <!-- First row with Zelle and PayPal -->
+                <!-- First row with Zelle and Bitcoin -->
                 <div class="payment-options-row">
                     <div class="payment-card" data-payment="zelle">
                         <div class="payment-icon">
@@ -65,6 +65,18 @@
                         <p class="payment-description">Send payment to <strong>702.890.5469</strong> via your banking app or Zelle app.</p>
                         <a href="zelle.html" class="btn btn-outline select-payment" data-payment="zelle">Select Zelle</a>
                     </div>
+                    <div class="payment-card" data-payment="bitcoin">
+                        <div class="payment-icon">
+                            <i class="fab fa-bitcoin"></i>
+                        </div>
+                        <h4 class="payment-title">Bitcoin <span style="color:#4CAF50;font-size:0.9em;">(Preffered)</span></h4>
+                        <p class="payment-description">Pay with Bitcoin.</p>
+                        <a href="https://cash.app/launch/bitcoin/$cocoji/LBtPxq9s46" class="btn btn-outline select-payment" data-payment="bitcoin" target="_blank">Pay Now</a>
+                    </div>
+                </div>
+
+                <!-- Second row with PayPal and CashApp -->
+                <div class="payment-options-row">
                     <div class="payment-card" data-payment="paypal">
                         <div class="payment-icon">
                             <i class="fab fa-paypal"></i>
@@ -73,10 +85,6 @@
                         <p class="payment-description">Pay securely using your PayPal account<br><span style="color:#e57373;font-size:0.95em;">* Please add $6 to cover PayPal fees</span></p>
                         <a href="https://paypal.me/uma64" class="btn btn-outline select-payment" data-payment="paypal">Select PayPal</a>
                     </div>
-                </div>
-
-                <!-- Second row with CashApp and Venmo -->
-                <div class="payment-options-row">
                     <div class="payment-card" data-payment="cashapp">
                         <div class="payment-icon">
                             <i class="fas fa-dollar-sign"></i>
@@ -85,6 +93,10 @@
                         <p class="payment-description">Quick and easy payments with CashApp<br><span style="color:#e57373;font-size:0.95em;">* Please add $6 to cover CashApp fees</span></p>
                         <a href="https://cash.app/$cocoji" class="btn btn-outline select-payment" data-payment="cashapp">Select CashApp</a>
                     </div>
+                </div>
+
+                <!-- Third row with Venmo and Apple Pay -->
+                <div class="payment-options-row">
                     <div class="payment-card" data-payment="venmo">
                         <div class="payment-icon">
                             <div class="venmo-icon">V</div>
@@ -93,11 +105,7 @@
                         <p class="payment-description">Send money easily with Venmo to <strong>@GoddessTemple</strong><br><span style="color:#e57373;font-size:0.95em;">* Please add $8 to cover Venmo fees</span></p>
                         <a href="https://account.venmo.com/u/GoddessTemple" class="btn btn-outline select-payment" data-payment="venmo" target="_blank">Select Venmo</a>
                     </div>
-                </div>
-
-                <!-- Third row with Apple Pay centered -->
-                <div class="payment-options-row" style="justify-content: center;">
-                    <div class="payment-card" data-payment="applepay" style="max-width: 400px;">
+                    <div class="payment-card" data-payment="applepay">
                         <div class="payment-icon">
                             <div class="apple-pay-icon">
                                 <i class="fab fa-apple"></i>
@@ -169,6 +177,7 @@
                 <h3>Payment Options</h3>
                 <ul class="footer-links">
                     <li><a href="zelle.html"><img src="assets/Images/zelle-icon.svg" alt="Zelle" style="height:1.2em;vertical-align:middle;margin-right:6px;"> Zelle <span style="color:#81C784;font-weight:500;font-size:0.9em;">(preferred)</span></a></li>
+                    <li><a href="https://cash.app/launch/bitcoin/$cocoji/LBtPxq9s46" target="_blank"><i class="fab fa-bitcoin"></i> Bitcoin <span style="color:#81C784;font-weight:500;font-size:0.9em;">(preferred)</span></a></li>
                     <li><a href="https://paypal.me/sutras" target="_blank"><i class="fab fa-paypal"></i> PayPal <span style="color:#FFAB91;font-size:0.9em;">(+$6)</span></a></li>
                     <li><a href="https://cash.app/$cocoji" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp <span style="color:#FFAB91;font-size:0.9em;">(+$6)</span></a></li>
                     <li><a href="https://account.venmo.com/u/GoddessTemple" target="_blank"><span style="display:inline-block;width:1.2em;height:1.2em;background:#8a2be2;color:white;text-align:center;border-radius:3px;font-size:0.8em;line-height:1.2em;margin-right:6px;font-weight:bold;">V</span> Venmo <span style="color:#FFAB91;font-size:0.9em;">(+$8)</span></a></li>
@@ -285,6 +294,8 @@
                     window.open('https://cash.app/$cocoji', '_blank');
                 } else if (selectedPayment === 'venmo') {
                     window.open('https://account.venmo.com/u/GoddessTemple', '_blank');
+                } else if (selectedPayment === 'bitcoin') {
+                    window.open('https://cash.app/launch/bitcoin/$cocoji/LBtPxq9s46', '_blank');
                 }
             });
         });
@@ -327,6 +338,9 @@
                     case 'venmo':
                         paymentName = 'Venmo';
                         break;
+                case 'bitcoin':
+                        paymentName = 'Bitcoin';
+                        break;
                 }
                 summaryPayment.textContent = paymentName;
             }
@@ -367,6 +381,9 @@
                     break;
                 case 'venmo':
                     window.location.href = 'https://account.venmo.com/u/GoddessTemple';
+                    break;
+                case 'bitcoin':
+                    window.location.href = 'https://cash.app/launch/bitcoin/$cocoji/LBtPxq9s46';
                     break;
             }
 
