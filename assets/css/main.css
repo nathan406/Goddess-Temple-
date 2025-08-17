@@ -17,6 +17,7 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 5rem;
 }
 
 .advance-discounts .discounts-content {
@@ -758,6 +759,7 @@ section {
 
 /* Movie Card Section */
 .movie-card {
+    margin-top: 5rem;
     background: var(--white);
     padding: 2rem;
     border-radius: 15px;
