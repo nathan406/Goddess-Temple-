@@ -18,6 +18,75 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    
+    <!-- Floating Action Button Styles -->
+    <style>
+        .floating-virtual-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #8a2be2, #ee5a24);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-virtual-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(138, 43, 226, 0.6);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .floating-virtual-btn .notification-dot {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(138, 43, 226, 0.8); }
+            100% { box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+        
+        @media (max-width: 768px) {
+            .floating-virtual-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -30,6 +99,7 @@
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link">Reviews</a></li>
                 <li class="nav-item"><a href="#fmty" class="nav-link">FMTY</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -48,10 +118,24 @@
                 <h1>Goddess Temple</h1>
                 <p>Dr C's Goddess Temple: "Embark on a virtual Tantra Journey of self-discovery, empowerment, and
                     intimate connection"</p>
+                
+                <!-- Virtual Sessions Highlight -->
+                <div class="hero-highlight" style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 10px; margin: 1.5rem 0; border: 2px solid rgba(138, 43, 226, 0.3);">
+                    <p style="margin: 0; font-size: 1.1rem; color: #8a2be2; font-weight: 600;">
+                        <strong>NEW:</strong> Virtual Tantra Sessions Now Available Worldwide! 
+                        <p>
+                            <span class="hero-discount" style="background: #8a2be2; color: white; padding: 3px 8px; border-radius: 15px; font-size: 0.9rem; margin-left: 10px;">Save Today</span>
+                        </p>
+                    </p>
+                </div>
+
                 <div class="hero-buttons">
+                    <a href="#services" class="btn btn-animated" style="background: #8a2be2; color: white; position: relative; overflow: hidden;">
+                        <span style="position: relative; z-index: 2;">Book Virtual Session</span>
+                        <div style="position: absolute; top: -5px; right: -5px; background: #ff6b6b; color: white; padding: 2px 6px; border-radius: 10px; font-size: 0.7rem; z-index: 3;">HOT</div>
+                    </a>
                     <a href="mailto:umaparvati702@gmail.com?subject=Texas%20Incall"
-                        class="btn btn-animated">Incall Tantra</a>
-                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                        class="btn btn-outline">Incall Tantra</a>
                 </div>
             </div>
         </div>
@@ -311,68 +395,287 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Virtual Encounters</h2>
+                <h2> Exclusive Virtual Tantra Encounters</h2>
+                <p class="section-subtitle" style="font-size: 1.2rem; color: #666; margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Experience intimate, transformative sessions from the comfort of your own sacred space. 
+                    <strong style="color: #6b3fa0;">Limited availability - Only <span class="total-slots">5</span> spots remaining this week!</strong>
+                </p>
             </div>
+
+            <!-- Special Offer Banner -->
+            <div class="special-offer-banner discount-banner" data-aos="fade-up" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; padding: 1.5rem; border-radius: 15px; text-align: center; margin-bottom: 2rem; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -10px; right: -10px; background: #fff; color: #ff6b6b; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; transform: rotate(15deg);">
+                     HOT DEAL
+                </div>
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.4rem;"> LIMITED TIME: Book Today & Save <span class="main-discount">$50</span>!</h3>
+             
+            </div>
+
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <h3>Session Offerings</h3>
                 <div class="service-details">
-                    <div class="service-item">
-                        <i class="fas fa-clock"></i>
-                        <h4>Half Hour</h4>
-                        <p>$111</p>
-                        <a class='btn btn-outline btn-sm' href='payment.html'>Book Now</a>
+                    <!-- Half Hour Package -->
+                    <div class="service-item premium-package" data-package="intimate" style="position: relative; border: 2px solid #8a2be2; background: linear-gradient(135deg, #f8f0ff, #fff);">
+                        <i class="fas fa-heart" style="color: #8a2be2; font-size: 2.5rem; margin-bottom: 15px;"></i>
+                        <h4 style="color: #8a2be2; font-size: 1.3rem; margin-bottom: 10px;">Intimate Connection</h4>
+                        <div class="price-container" style="margin-bottom: 15px;">
+                            <span class="original-price" style="text-decoration: line-through; color: #999; font-size: 1rem; display: none;">$161</span>
+                            <span class="current-price" style="font-size: 2rem; font-weight: bold; color: #8a2be2; margin-left: 10px;">$111</span>
+                            <div style="font-size: 0.9rem; color: #666;">30 minutes</div>
+                        </div>
+                        <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #555;">
+                            <li> Personalized tantric guidance</li>
+                            <li> Breathing & energy work</li>
+                        </ul>
+                        <div class="urgency-text" style="background: #ffe6e6; padding: 8px; border-radius: 5px; margin: 10px 0; font-size: 0.9rem; color: #d63031;">
+                             Only <span class="slots-remaining">2</span> slots left today!
+                        </div>
+                        <div class="discount-amount" style="background: #f8f0ff; padding: 8px; border-radius: 5px; margin: 10px 0; font-size: 0.9rem; color: #8a2be2; display: none;">
+                        </div>
+                        <a class='btn btn-animated' href='payment.html' style="background: #8a2be2; color: white; width: 100%; padding: 12px; font-weight: bold;">
+                             BOOK NOW
+                        </a>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-hourglass-half"></i>
-                        <h4>Full Hour</h4>
-                        <p>$200</p>
-                        <a class='btn btn-outline btn-sm' href='payment.html'>Book Now</a>
+
+                    <!-- Full Hour Package -->
+                    <div class="service-item" data-package="deep" style="border: 2px solid #ee5a24; background: linear-gradient(135deg, #fff5f0, #fff);">
+                        <i class="fas fa-fire" style="color: #ee5a24; font-size: 2.5rem; margin-bottom: 15px;"></i>
+                        <h4 style="color: #ee5a24; font-size: 1.3rem; margin-bottom: 10px;">Deep Transformation</h4>
+                        <div class="price-container" style="margin-bottom: 15px;">
+                            <span class="original-price" style="text-decoration: line-through; color: #999; font-size: 1rem; display: none;">$250</span>
+                            <span class="current-price" style="font-size: 2rem; font-weight: bold; color: #ee5a24; margin-left: 10px;">$200</span>
+                            <div style="font-size: 0.9rem; color: #666;">60 minutes</div>
+                        </div>
+                        <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #555;">
+                            <li> Complete tantric journey</li>
+                            <li> Advanced energy techniques</li>
+                        </ul>
+                        <div class="urgency-text" style="background: #ffe6e6; padding: 8px; border-radius: 5px; margin: 10px 0; font-size: 0.9rem; color: #d63031;">
+                             Only <span class="slots-remaining">1</span> slots left today!
+                        </div>
+                        <div class="discount-amount" style="background: #f8f0ff; padding: 8px; border-radius: 5px; margin: 10px 0; font-size: 0.9rem; color: #8a2be2; display: none;">
+                        </div>
+                        <a class='btn btn-outline' href='payment.html' style="border: 2px solid #ee5a24; color: #ee5a24; width: 100%; padding: 12px; font-weight: bold;">
+                             TRANSFORM NOW
+                        </a>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-hourglass"></i>
-                        <h4>2 Hours</h4>
-                        <p>$333</p>
-                        <a class='btn btn-outline btn-sm' href='payment.html'>Book Now</a>
+
+                    <!-- 2 Hours Package -->
+                    <div class="service-item luxury-package" data-package="luxury" style="border: 3px solid #ffd700; background: linear-gradient(135deg, #fffbf0, #fff); position: relative;">
+                        <div class="popular-badge" style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #8a2be2; color: white; padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">
+                             MOST POPULAR
+                        </div>
+                        <div class="luxury-badge" style="position: absolute; top: -10px; right: -10px; background: linear-gradient(45deg, #ffd700, #ffed4e); color: #333; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; transform: rotate(15deg);">
+                             LUXURY
+                        </div>
+                        <i class="fas fa-crown" style="color: #ffd700; font-size: 2.5rem; margin-bottom: 15px;"></i>
+                        <h4 style="color: #b8860b; font-size: 1.3rem; margin-bottom: 10px;">Ultimate Experience</h4>
+                        <div class="price-container" style="margin-bottom: 15px;">
+                            <span class="original-price" style="text-decoration: line-through; color: #999; font-size: 1rem; display: none;">$400</span>
+                            <span class="current-price" style="font-size: 2rem; font-weight: bold; color: #b8860b; margin-left: 10px;">$333</span>
+                            <div style="font-size: 0.9rem; color: #666;">120 minutes</div>
+                        </div>
+                        <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #555;">
+                            <li>Premium tantric mastery session</li>
+                            <li> Complete digital library access</li>
+                            <li> Personalized practice plan</li>
+                        </ul>
+                        <div class="urgency-text" style="background: #ffe6e6; padding: 8px; border-radius: 5px; margin: 10px 0; font-size: 0.9rem; color: #d63031;">
+                             Only <span class="slots-remaining">2</span> slots left today!
+                        </div>
+                        <div class="discount-amount" style="background: #f8f0ff; padding: 8px; border-radius: 5px; margin: 10px 0; font-size: 0.9rem; color: #8a2be2; display: none;">
+                        </div>
+                        <a class='btn btn-animated' href='payment.html' style="background: linear-gradient(45deg, #ffd700, #ffed4e); color: #333; width: 100%; padding: 12px; font-weight: bold;">
+                             CLAIM LUXURY EXPERIENCE
+                        </a>
                     </div>
                 </div>
-                <p class="service-note">Break up sessions: Divide your virtual sessions into up to four 30-minute
-                    sessions.</p>
-                <div class="service-cta" data-aos="fade-up">
-                    <a class='btn btn-animated' href='payment.html'>
-                        <i class="fas fa-credit-card"></i> Proceed to Payment
-                    </a>
+
+
+
+                <!-- Flexible Sessions Note -->
+                <div class="flexibility-note" style="background: linear-gradient(135deg, #f8f0ff, #fff5f0); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; text-align: center;">
+                    <h4 style="color: #8a2be2; margin-bottom: 1rem;"> Maximum Flexibility</h4>
+                    <p style="margin-bottom: 1rem; color: #555;">Break up your virtual sessions into up to four 30-minute sessions - perfect for your busy schedule!</p>
+                    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; color: #8a2be2; border: 1px solid #8a2be2;"> Schedule Anytime</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; color: #8a2be2; border: 1px solid #8a2be2;"> Worldwide Access</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; color: #8a2be2; border: 1px solid #8a2be2;"> 100% Private</span>
+                    </div>
+                </div>
+
+                <!-- Main CTA -->
+                <div class="service-cta" data-aos="fade-up" style="text-align: center; margin-top: 2rem;">
+                    <div style="background: linear-gradient(135deg, #8a2be2, #ee5a24); padding: 2rem; border-radius: 15px; color: white; margin-bottom: 1rem;">
+                        <h3 style="margin-bottom: 1rem; color: white;">🎯 Ready to Transform Your Life?</h3>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Join hundreds of satisfied clients who've experienced Dr. C's transformative virtual sessions</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a class='btn btn-animated' href='payment.html' style="background: white; color: #8a2be2; padding: 15px 30px; font-size: 1.1rem; font-weight: bold;">
+                                <i class="fas fa-credit-card"></i> BOOK YOUR SESSION NOW
+                            </a>
+                            <a href="mailto:umaparvati702@gmail.com?subject=Virtual%20Session%20Inquiry" class='btn btn-outline' style="border: 2px solid white; color: white; padding: 15px 30px; font-size: 1.1rem;">
+                                <i class="fas fa-envelope"></i> ASK QUESTIONS FIRST
+                            </a>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Advance Discounts Section -->
-    <section id="advance-discounts" class="advance-discounts">
+    <section id="advance-discounts" class="advance-discounts" style="background: linear-gradient(135deg, #f8f0ff, #fff5f0); padding: 4rem 0;">
         <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Advance Discounts</h2>
+            <div class="section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="color: #8a2be2; font-size: 2.5rem; margin-bottom: 1rem;">Advance Booking Rewards</h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    The earlier you book, the more you save! Lock in your transformative in-person ceremony and enjoy exclusive discounts.
+                </p>
             </div>
-            <div class="discounts-content" data-aos="fade-right">
-                <p><strong>Book your in-person ceremony in advance on </strong> and receive exclusive discounts! When
-                    you schedule your appointment in advance, it helps Dr C be ready, book accommodations, and plan your
-                    time together, giving you the <strong>BEST</strong> session possible. This allows Her to pass
-                    savings along to you!</p>
-                <p>&nbsp;</p>
-                <p>These advance booking discounts apply to in-person ceremonies scheduled below:</p>
-                <p>&nbsp;</p>
-                <ul class="discounts-list">
-                    <li>Schedule 48 hrs ahead: <strong>Save $25</strong></li>
-                    <li>3 days ahead: <strong>Save $33</strong></li>
-                    <li>4 days ahead: <strong>Save $44</strong></li>
-                    <li>5 days ahead: <strong>Save $55</strong></li>
-                    <li>6 days ahead: <strong>Save $66</strong></li>
-                    <li>1 week ahead: <strong>Save $77</strong></li>
-                    <li>1.5 weeks ahead: <strong>Save $88</strong></li>
-                    <li>2 weeks ahead: <strong>Save $100</strong></li>
-                    <li>2.5 weeks ahead: <strong>Save $120</strong></li>
-                    <li>3 weeks ahead: <strong>Save $150</strong></li>
-                    <li>1 month ahead: <strong>Save $200</strong></li>
-                </ul>
+            
+            <!-- Benefits Banner -->
+            <div class="benefits-banner" data-aos="fade-up" style="background: linear-gradient(135deg, #8a2be2, #ee5a24); color: white; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 1rem; color: white;">Why Book in Advance?</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div>
+                        <i class="fas fa-star" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p style="margin: 0; font-weight: bold;">Best Session Quality</p>
+                        <small>Dr. C can prepare specifically for you</small>
+                    </div>
+                    <div>
+                        <i class="fas fa-home" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p style="margin: 0; font-weight: bold;">Premium Accommodations</p>
+                        <small>Secure the perfect sacred space</small>
+                    </div>
+                    <div>
+                        <i class="fas fa-piggy-bank" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p style="margin: 0; font-weight: bold;">Maximum Savings</p>
+                        <small>Up to $200 off your session</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discounts-content" data-aos="fade-up">
+                <!-- Discount Tiers -->
+                <div class="discount-tiers" style="display: grid; gap: 2rem; margin: 2rem 0; padding: 0 1rem;">
+                    <style>
+                        .discount-tiers {
+                            grid-template-columns: repeat(3, minmax(320px, 1fr));
+                            max-width: 1400px;
+                            margin: 2rem auto;
+                            justify-content: center;
+                        }
+                        @media (max-width: 1200px) {
+                            .discount-tiers {
+                                grid-template-columns: repeat(2, minmax(300px, 1fr));
+                                gap: 1.5rem;
+                            }
+                        }
+                        @media (max-width: 768px) {
+                            .discount-tiers {
+                                grid-template-columns: 1fr;
+                                gap: 1.5rem;
+                                padding: 0;
+                            }
+                        }
+                        .discount-tier {
+                            min-height: 450px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+                        .discount-tier:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
+                        }
+                        .discount-tier:nth-child(4):hover {
+                            box-shadow: 0 10px 35px rgba(255, 215, 0, 0.4);
+                        }
+                    </style>
+                    
+                    <!-- Tier 1: Quick Bookers -->
+                    <div class="discount-tier" style="background: white; border: 2px solid #f8f0ff; border-radius: 20px; padding: 2rem; text-align: center; position: relative; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="background: #8a2be2; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; display: inline-block; margin-bottom: 1.5rem; font-weight: bold; font-size: 1.1rem;">
+                            Quick Bookers
+                        </div>
+                        <h3 style="color: #8a2be2; margin-bottom: 1.5rem; font-size: 1.4rem;">2-6 Days Ahead</h3>
+                        <div class="tier-discounts" style="margin: 1.5rem 0; flex-grow: 1;">
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #f8f0ff; border-radius: 12px; border-left: 4px solid #8a2be2;">
+                                <strong style="font-size: 1.1rem;">48 hours:</strong> <span style="color: #8a2be2; font-weight: bold;">Save $25</span>
+                            </div>
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #f8f0ff; border-radius: 12px; border-left: 4px solid #8a2be2;">
+                                <strong style="font-size: 1.1rem;">3-4 days:</strong> <span style="color: #8a2be2; font-weight: bold;">Save $33-$44</span>
+                            </div>
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #f8f0ff; border-radius: 12px; border-left: 4px solid #8a2be2;">
+                                <strong style="font-size: 1.1rem;">5-6 days:</strong> <span style="color: #8a2be2; font-weight: bold;">Save $55-$66</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 1rem; color: #666; margin-top: 1.5rem; font-style: italic;">Perfect for spontaneous goddesses!</p>
+                    </div>
+
+                    <!-- Tier 2: Smart Planners -->
+                    <div class="discount-tier" style="background: white; border: 2px solid #8a2be2; border-radius: 20px; padding: 2rem; text-align: center; position: relative; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="background: #8a2be2; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; display: inline-block; margin-bottom: 1.5rem; font-weight: bold; font-size: 1.1rem;">
+                            Smart Planners
+                        </div>
+                        <h3 style="color: #8a2be2; margin-bottom: 1.5rem; font-size: 1.4rem;">1-3 Weeks Ahead</h3>
+                        <div class="tier-discounts" style="margin: 1.5rem 0; flex-grow: 1;">
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #f8f0ff; border-radius: 12px; border-left: 4px solid #8a2be2;">
+                                <strong style="font-size: 1.1rem;">1 week:</strong> <span style="color: #8a2be2; font-weight: bold;">Save $77</span>
+                            </div>
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #f8f0ff; border-radius: 12px; border-left: 4px solid #8a2be2;">
+                                <strong style="font-size: 1.1rem;">1.5 weeks:</strong> <span style="color: #8a2be2; font-weight: bold;">Save $88</span>
+                            </div>
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #f8f0ff; border-radius: 12px; border-left: 4px solid #8a2be2;">
+                                <strong style="font-size: 1.1rem;">2-3 weeks:</strong> <span style="color: #8a2be2; font-weight: bold;">Save $100-$150</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 1rem; color: #666; margin-top: 1.5rem; font-style: italic;">Ideal balance of planning & savings!</p>
+                    </div>
+
+                    <!-- Tier 3: VIP Planners -->
+                    <div class="discount-tier" style="background: white; border: 3px solid #ffd700; border-radius: 20px; padding: 2rem; text-align: center; position: relative; box-shadow: 0 6px 25px rgba(255, 215, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #8a2be2; color: white; padding: 8px 24px; border-radius: 25px; font-size: 0.9rem; font-weight: bold; box-shadow: 0 2px 10px rgba(138, 43, 226, 0.3);">
+                            MOST POPULAR
+                        </div>
+                        <div style="position: absolute; top: -12px; right: -12px; background: linear-gradient(45deg, #ffd700, #ffed4e); color: #333; padding: 8px 16px; border-radius: 25px; font-size: 0.9rem; font-weight: bold; transform: rotate(15deg); box-shadow: 0 2px 10px rgba(255, 215, 0, 0.4);">
+                            VIP
+                        </div>
+                        <div style="background: linear-gradient(45deg, #ffd700, #ffed4e); color: #333; padding: 0.75rem 1.5rem; border-radius: 25px; display: inline-block; margin-bottom: 1.5rem; font-weight: bold; margin-top: 1.5rem; font-size: 1.1rem;">
+                            VIP Planners
+                        </div>
+                        <h3 style="color: #b8860b; margin-bottom: 1.5rem; font-size: 1.4rem;">1+ Month Ahead</h3>
+                        <div class="tier-discounts" style="margin: 1.5rem 0; flex-grow: 1;">
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #fffbf0; border-radius: 12px; border-left: 4px solid #ffd700;">
+                                <strong style="font-size: 1.1rem;">1 month:</strong> <span style="color: #b8860b; font-weight: bold;">Save $200</span>
+                            </div>
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #fffbf0; border-radius: 12px; border-left: 4px solid #ffd700;">
+                                <strong style="font-size: 1.1rem;">Plus:</strong> <span style="color: #b8860b; font-weight: bold;">Priority scheduling</span>
+                            </div>
+                            <div style="margin: 0.75rem 0; padding: 1rem; background: #fffbf0; border-radius: 12px; border-left: 4px solid #ffd700;">
+                                <strong style="font-size: 1.1rem;">Bonus:</strong> <span style="color: #b8860b; font-weight: bold;">Free consultation call</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 1rem; color: #666; margin-top: 1.5rem; font-style: italic;">Maximum savings & VIP treatment!</p>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="advance-booking-cta" data-aos="fade-up" style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #f8f0ff, #fff5f0); border-radius: 15px;">
+                    <h3 style="color: #8a2be2; margin-bottom: 1rem;">Ready to Lock in Your Savings?</h3>
+                    <p style="margin-bottom: 2rem; color: #555; font-size: 1.1rem;">
+                        The sooner you book, the more you save. Don't wait - these discounts are only available for advance bookings!
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="mailto:umaparvati702@gmail.com?subject=Advance%20Booking%20Inquiry" class="btn btn-animated" style="background: #6b3fa0; color: white; padding: 15px 30px; font-size: 1.1rem;">
+                            Book Your In-Person Session
+                        </a>
+                        <a href="#services" class="btn btn-outline" style="border: 2px solid #6b3fa0; color: #6b3fa0; padding: 15px 30px; font-size: 1.1rem;">
+                            Or Try Virtual First
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -613,6 +916,249 @@
            
     </section>
 
+    <!-- Dynamic Testimonials Section -->
+    <section id="testimonials" class="testimonials" style="background: linear-gradient(135deg, #f8f0ff, #fff5f0); padding: 4rem 0;">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="color: #8a2be2; font-size: 2.5rem; margin-bottom: 1rem;">What Our Goddesses Say</h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    Real transformations from real people who've experienced Dr. C's sacred sessions
+                </p>
+            </div>
+
+            <!-- Testimonials Container -->
+            <div class="testimonials-container" id="testimonialsContainer" style="display: grid; gap: 2rem; margin: 2rem 0;">
+                <style>
+                    .testimonials-container {
+                        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                    }
+                    @media (max-width: 768px) {
+                        .testimonials-container {
+                            grid-template-columns: 1fr;
+                            gap: 1.5rem;
+                        }
+                    }
+                    
+                    .testimonial-card {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 2rem;
+                        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                        position: relative;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    }
+                    
+                    .testimonial-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
+                    }
+                    
+                    .testimonial-card.featured {
+                        border: 3px solid #8a2be2;
+                        background: linear-gradient(135deg, #f8f0ff, #fff);
+                    }
+                    
+                    .testimonial-card.featured::before {
+                        content: "⭐ FEATURED";
+                        position: absolute;
+                        top: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background: #8a2be2;
+                        color: white;
+                        padding: 5px 20px;
+                        border-radius: 20px;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                    }
+                    
+                    .testimonial-stars {
+                        color: #ffd700;
+                        font-size: 1.2rem;
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .testimonial-text {
+                        font-style: italic;
+                        font-size: 1.1rem;
+                        line-height: 1.6;
+                        color: #555;
+                        margin-bottom: 1.5rem;
+                        position: relative;
+                    }
+                    
+                    .testimonial-text::before {
+                        content: '"';
+                        font-size: 3rem;
+                        color: #8a2be2;
+                        position: absolute;
+                        top: -10px;
+                        left: -10px;
+                        opacity: 0.3;
+                    }
+                    
+                    .testimonial-author {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+                    
+                    .testimonial-avatar {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #8a2be2, #ee5a24);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                    }
+                    
+                    .testimonial-info h4 {
+                        margin: 0;
+                        color: #333;
+                        font-size: 1.1rem;
+                    }
+                    
+                    .testimonial-info p {
+                        margin: 0;
+                        color: #666;
+                        font-size: 0.9rem;
+                    }
+                    
+                    .testimonial-session-type {
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        background: rgba(138, 43, 226, 0.1);
+                        color: #8a2be2;
+                        padding: 5px 12px;
+                        border-radius: 20px;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                    }
+                </style>
+
+                <!-- Static testimonials as fallback -->
+                <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-avatar" style="width: 60px; height: 60px; background: linear-gradient(45deg, #8a2be2, #ee5a24); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem;">S</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color: #ffd700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">"Life-changing experience! Dr. C's virtual session was more intimate than I expected. Worth every penny!"</p>
+                        <div class="testimonial-author">
+                            <div style="font-weight: bold; color: #8a2be2;">Sarah M.</div>
+                            <div style="font-size: 0.9rem; color: #666;">Austin, TX • Virtual 60min</div>
+                        </div>
+                    </div>
+                    <div class="session-type" style="position: absolute; top: 15px; right: 15px; background: rgba(138, 43, 226, 0.1); color: #8a2be2; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">Virtual 60min</div>
+                </div>
+
+                <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-avatar" style="width: 60px; height: 60px; background: linear-gradient(45deg, #8a2be2, #ee5a24); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem;">J</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color: #ffd700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">"I was skeptical about virtual sessions, but Dr. C created such a sacred space. Absolutely transformative!"</p>
+                        <div class="testimonial-author">
+                            <div style="font-weight: bold; color: #8a2be2;">Jennifer L.</div>
+                            <div style="font-size: 0.9rem; color: #666;">California • Virtual 30min</div>
+                        </div>
+                    </div>
+                    <div class="session-type" style="position: absolute; top: 15px; right: 15px; background: rgba(138, 43, 226, 0.1); color: #8a2be2; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">Virtual 30min</div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-avatar" style="width: 60px; height: 60px; background: linear-gradient(45deg, #8a2be2, #ee5a24); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem;">M</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color: #ffd700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">"The 2-hour luxury experience was life-changing. Dr. C created such a safe, sacred space for healing. I released years of trauma and discovered parts of myself I never knew existed."</p>
+                        <div class="testimonial-author">
+                            <div style="font-weight: bold; color: #8a2be2;">Maria L.</div>
+                            <div style="font-size: 0.9rem; color: #666;">Houston, TX • In-Person 2hr</div>
+                        </div>
+                    </div>
+                    <div class="session-type" style="position: absolute; top: 15px; right: 15px; background: rgba(138, 43, 226, 0.1); color: #8a2be2; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">In-Person 2hr</div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="testimonial-avatar" style="width: 60px; height: 60px; background: linear-gradient(45deg, #8a2be2, #ee5a24); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem;">A</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color: #ffd700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">"Dr. C is a true goddess! Her virtual sessions are just as powerful as in-person. The tantric techniques she taught me have revolutionized my self-care practice and intimate relationships."</p>
+                        <div class="testimonial-author">
+                            <div style="font-weight: bold; color: #8a2be2;">Amanda R.</div>
+                            <div style="font-size: 0.9rem; color: #666;">Florida • Virtual 60min</div>
+                        </div>
+                    </div>
+                    <div class="session-type" style="position: absolute; top: 15px; right: 15px; background: rgba(138, 43, 226, 0.1); color: #8a2be2; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">Virtual 60min</div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="testimonial-avatar" style="width: 60px; height: 60px; background: linear-gradient(45deg, #8a2be2, #ee5a24); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem;">L</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color: #ffd700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">"The luxury virtual experience exceeded all expectations. Dr. C's personalized approach and deep knowledge of tantric healing created a transformative journey I'll never forget."</p>
+                        <div class="testimonial-author">
+                            <div style="font-weight: bold; color: #8a2be2;">Lisa T.</div>
+                            <div style="font-size: 0.9rem; color: #666;">New York • Virtual 2hr</div>
+                        </div>
+                    </div>
+                    <div class="session-type" style="position: absolute; top: 15px; right: 15px; background: rgba(138, 43, 226, 0.1); color: #8a2be2; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">Virtual 2hr</div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="testimonial-avatar" style="width: 60px; height: 60px; background: linear-gradient(45deg, #8a2be2, #ee5a24); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem;">R</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color: #ffd700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">"Traveling to see Dr. C was the best decision I've made for my personal growth. Her in-person sessions are incredibly healing and empowering. Worth every penny!"</p>
+                        <div class="testimonial-author">
+                            <div style="font-weight: bold; color: #8a2be2;">Rachel D.</div>
+                            <div style="font-size: 0.9rem; color: #666;">Georgia • In-Person 60min</div>
+                        </div>
+                    </div>
+                    <div class="session-type" style="position: absolute; top: 15px; right: 15px; background: rgba(138, 43, 226, 0.1); color: #8a2be2; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">In-Person 60min</div>
+                </div>
+
+                <!-- Dynamic testimonials will replace these if JavaScript loads -->
+            </div>
+
+            <!-- Testimonials Stats -->
+            <div class="testimonials-stats" data-aos="fade-up" style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #8a2be2, #ee5a24); border-radius: 15px; color: white;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;" id="totalSessions">500+</div>
+                        <div style="font-size: 1.1rem;">Sessions Completed</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;" id="averageRating">4.9</div>
+                        <div style="font-size: 1.1rem;">Average Rating</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;" id="satisfactionRate">98%</div>
+                        <div style="font-size: 1.1rem;">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="testimonials-cta" data-aos="fade-up" style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 15px; border: 2px solid #8a2be2;">
+                <h3 style="color: #8a2be2; margin-bottom: 1rem;">Ready to Write Your Own Success Story?</h3>
+                <p style="margin-bottom: 2rem; color: #555; font-size: 1.1rem;">
+                    Join hundreds of satisfied goddesses who've transformed their lives with Dr. C's guidance
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#services" class="btn btn-animated" style="background: #8a2be2; color: white; padding: 15px 30px; font-size: 1.1rem;">
+                        <i class="fas fa-video"></i> Book Virtual Session
+                    </a>
+                    <a href="mailto:umaparvati702@gmail.com?subject=In-Person%20Session%20Inquiry" class="btn btn-outline" style="border: 2px solid #8a2be2; color: #8a2be2; padding: 15px 30px; font-size: 1.1rem;">
+                        <i class="fas fa-calendar"></i> Schedule In-Person
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -848,6 +1394,564 @@
                 }
             });
         });
+    </script>
+
+
+
+    <script>
+        // Dynamic Pricing and Availability System
+        class DynamicPricingSystem {
+            constructor() {
+                this.basePrice = {
+                    intimate: 111,
+                    deep: 200,
+                    luxury: 333
+                };
+                this.maxIncrease = {
+                    intimate: 50,
+                    deep: 50,
+                    luxury: 67
+                };
+                this.init();
+            }
+
+            // Get current week number to ensure weekly rotation
+            getWeekNumber() {
+                const now = new Date();
+                const start = new Date(now.getFullYear(), 0, 1);
+                const diff = now - start;
+                const oneWeek = 1000 * 60 * 60 * 24 * 7;
+                return Math.floor(diff / oneWeek);
+            }
+
+            // Generate consistent weekly data based on week number
+            getWeeklyData() {
+                const week = this.getWeekNumber();
+                const seed = week % 8; // 8-week rotation cycle
+
+                // Price variations (0-100% of max increase)
+                const priceMultipliers = [
+                    { intimate: 0, deep: 0.2, luxury: 0.3 },      // Week 1: Base prices mostly
+                    { intimate: 0.4, deep: 0.6, luxury: 0.8 },   // Week 2: Mid-range increases
+                    { intimate: 0.2, deep: 0.3, luxury: 1.0 },   // Week 3: Luxury at max
+                    { intimate: 0.8, deep: 1.0, luxury: 0.5 },   // Week 4: Deep at max
+                    { intimate: 1.0, deep: 0.4, luxury: 0.7 },   // Week 5: Intimate at max
+                    { intimate: 0.3, deep: 0.8, luxury: 0.2 },   // Week 6: Mixed
+                    { intimate: 0.6, deep: 0.2, luxury: 0.9 },   // Week 7: Mixed
+                    { intimate: 0.1, deep: 0.5, luxury: 0.4 }    // Week 8: Lower increases
+                ][seed];
+
+                // Slot availability patterns (total 5 slots distributed)
+                const slotPatterns = [
+                    { intimate: 2, deep: 1, luxury: 2 },
+                    { intimate: 1, deep: 2, luxury: 2 },
+                    { intimate: 2, deep: 2, luxury: 1 },
+                    { intimate: 1, deep: 1, luxury: 3 },
+                    { intimate: 3, deep: 1, luxury: 1 },
+                    { intimate: 2, deep: 1, luxury: 2 },
+                    { intimate: 1, deep: 3, luxury: 1 },
+                    { intimate: 2, deep: 2, luxury: 1 }
+                ][seed];
+
+                return { priceMultipliers, slotPatterns };
+            }
+
+            // Calculate current prices and discounts
+            getCurrentPricing() {
+                const { priceMultipliers } = this.getWeeklyData();
+                const pricing = {};
+
+                Object.keys(this.basePrice).forEach(package => {
+                    const basePrice = this.basePrice[package];
+                    const maxIncrease = this.maxIncrease[package];
+                    const currentIncrease = Math.floor(maxIncrease * priceMultipliers[package]);
+                    const currentPrice = basePrice + currentIncrease;
+                    const discount = currentIncrease;
+
+                    pricing[package] = {
+                        originalPrice: currentPrice,
+                        currentPrice: basePrice,
+                        discount: discount,
+                        hasDiscount: discount > 0
+                    };
+                });
+
+                return pricing;
+            }
+
+            // Get current slot availability
+            getCurrentSlots() {
+                const { slotPatterns } = this.getWeeklyData();
+                return slotPatterns;
+            }
+
+            // Update the DOM with current pricing and availability
+            updateDisplay() {
+                const pricing = this.getCurrentPricing();
+                const slots = this.getCurrentSlots();
+
+                // Update total remaining slots
+                const totalSlots = slots.intimate + slots.deep + slots.luxury;
+                document.querySelector('.total-slots').textContent = totalSlots;
+
+                // Update individual package data
+                this.updatePackage('intimate', pricing.intimate, slots.intimate);
+                this.updatePackage('deep', pricing.deep, slots.deep);
+                this.updatePackage('luxury', pricing.luxury, slots.luxury);
+
+                // Update main discount banner
+                const maxDiscount = Math.max(pricing.intimate.discount, pricing.deep.discount, pricing.luxury.discount);
+                if (maxDiscount > 0) {
+                    document.querySelector('.main-discount').textContent = `$${maxDiscount}`;
+                    document.querySelector('.discount-banner').style.display = 'block';
+                    
+                    // Update hero discount
+                    const heroDiscount = document.querySelector('.hero-discount');
+                    if (heroDiscount) {
+                        heroDiscount.textContent = `Save $${maxDiscount} Today`;
+                    }
+                } else {
+                    document.querySelector('.discount-banner').style.display = 'none';
+                    
+                    // Hide hero discount if no discounts available
+                    const heroDiscount = document.querySelector('.hero-discount');
+                    if (heroDiscount) {
+                        heroDiscount.style.display = 'none';
+                    }
+                }
+            }
+
+            updatePackage(packageName, pricing, slots) {
+                const packageElement = document.querySelector(`[data-package="${packageName}"]`);
+                if (!packageElement) return;
+
+                // Update pricing
+                const originalPriceEl = packageElement.querySelector('.original-price');
+                const currentPriceEl = packageElement.querySelector('.current-price');
+                const discountEl = packageElement.querySelector('.discount-amount');
+
+                if (pricing.hasDiscount) {
+                    originalPriceEl.textContent = `$${pricing.originalPrice}`;
+                    originalPriceEl.style.display = 'inline';
+                    if (discountEl) {
+                        discountEl.textContent = `Save $${pricing.discount}`;
+                        discountEl.style.display = 'block';
+                    }
+                } else {
+                    originalPriceEl.style.display = 'none';
+                    if (discountEl) {
+                        discountEl.textContent = '';
+                        discountEl.style.display = 'none';
+                    }
+                }
+                
+                currentPriceEl.textContent = `$${pricing.currentPrice}`;
+
+                // Update slots
+                const slotsEl = packageElement.querySelector('.slots-remaining');
+                if (slotsEl) {
+                    slotsEl.textContent = slots;
+                }
+            }
+
+            init() {
+                // Wait for DOM to be ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => this.updateDisplay());
+                } else {
+                    this.updateDisplay();
+                }
+            }
+        }
+
+        // Initialize dynamic pricing system
+        const pricingSystem = new DynamicPricingSystem();
+
+        // Popup System
+        class PopupSystem {
+            constructor() {
+                this.hasShown = false;
+                this.startTime = Date.now();
+                this.init();
+            }
+
+            createPopup() {
+                const popup = document.createElement('div');
+                popup.className = 'booking-popup';
+                popup.innerHTML = `
+                    <div class="popup-overlay"></div>
+                    <div class="popup-content">
+                        <button class="popup-close">&times;</button>
+                        <div class="popup-header">
+                            <h3>Limited Time Offer!</h3>
+                            <p>Don't miss out on your transformative virtual session</p>
+                        </div>
+                        <div class="popup-body">
+                            <div class="popup-urgency">
+                                <span class="urgency-text">Only <span class="total-slots-popup">${pricingSystem.getCurrentSlots().intimate + pricingSystem.getCurrentSlots().deep + pricingSystem.getCurrentSlots().luxury}</span> spots left this week!</span>
+                            </div>
+                            <div class="popup-cta">
+                                <a href="#services" class="popup-btn primary">Book Now</a>
+                                <button class="popup-btn secondary" onclick="this.closest('.booking-popup').remove()">Maybe Later</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Add styles
+                const style = document.createElement('style');
+                style.textContent = `
+                    .booking-popup {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 10000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .popup-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0,0,0,0.7);
+                    }
+                    .popup-content {
+                        position: relative;
+                        background: white;
+                        border-radius: 15px;
+                        padding: 2rem;
+                        max-width: 400px;
+                        width: 90%;
+                        text-align: center;
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                        animation: popupSlideIn 0.3s ease-out;
+                    }
+                    @keyframes popupSlideIn {
+                        from { transform: translateY(-50px); opacity: 0; }
+                        to { transform: translateY(0); opacity: 1; }
+                    }
+                    .popup-close {
+                        position: absolute;
+                        top: 10px;
+                        right: 15px;
+                        background: none;
+                        border: none;
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        color: #999;
+                    }
+                    .popup-header h3 {
+                        color: #8a2be2;
+                        margin-bottom: 0.5rem;
+                    }
+                    .popup-urgency {
+                        background: #fff3cd;
+                        border: 1px solid #ffeaa7;
+                        border-radius: 8px;
+                        padding: 1rem;
+                        margin: 1rem 0;
+                    }
+                    .urgency-text {
+                        color: #856404;
+                        font-weight: bold;
+                    }
+                    .popup-cta {
+                        display: flex;
+                        gap: 1rem;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                    }
+                    .popup-btn {
+                        padding: 12px 24px;
+                        border-radius: 25px;
+                        text-decoration: none;
+                        font-weight: bold;
+                        cursor: pointer;
+                        border: none;
+                        transition: all 0.3s ease;
+                    }
+                    .popup-btn.primary {
+                        background: #8a2be2;
+                        color: white;
+                    }
+                    .popup-btn.primary:hover {
+                        background: #6a1eae;
+                        transform: translateY(-2px);
+                    }
+                    .popup-btn.secondary {
+                        background: #f8f9fa;
+                        color: #666;
+                        border: 1px solid #ddd;
+                    }
+                    .popup-btn.secondary:hover {
+                        background: #e9ecef;
+                    }
+                `;
+                document.head.appendChild(style);
+
+                return popup;
+            }
+
+            showPopup() {
+                if (this.hasShown) return;
+                
+                const popup = this.createPopup();
+                document.body.appendChild(popup);
+                this.hasShown = true;
+
+                // Close handlers
+                popup.querySelector('.popup-close').onclick = () => popup.remove();
+                popup.querySelector('.popup-overlay').onclick = () => popup.remove();
+                popup.querySelector('.popup-btn.primary').onclick = () => {
+                    popup.remove();
+                    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+                };
+            }
+
+            init() {
+                // Show popup after 2 minutes
+                setTimeout(() => {
+                    this.showPopup();
+                }, 120000); // 2 minutes
+            }
+        }
+
+        // Initialize popup system
+        const popupSystem = new PopupSystem();
+
+        // Dynamic Testimonials System
+        class TestimonialsSystem {
+            constructor() {
+                this.testimonials = [
+                    {
+                        id: 1,
+                        name: "Sarah M.",
+                        location: "Austin, TX",
+                        sessionType: "Virtual 60min",
+                        rating: 5,
+                        text: "Life-changing experience! Dr. C's virtual session was more intimate than I expected. Worth every penny!",
+                        featured: true,
+                        avatar: "S"
+                    },
+                    {
+                        id: 2,
+                        name: "Jennifer L.",
+                        location: "California",
+                        sessionType: "Virtual 30min",
+                        rating: 5,
+                        text: "I was skeptical about virtual sessions, but Dr. C created such a sacred space. Absolutely transformative!",
+                        featured: true,
+                        avatar: "J"
+                    },
+                    {
+                        id: 3,
+                        name: "Maria L.",
+                        location: "Houston, TX",
+                        sessionType: "In-Person 2hr",
+                        rating: 5,
+                        text: "The 2-hour luxury experience was life-changing. Dr. C created such a safe, sacred space for healing. I released years of trauma and discovered parts of myself I never knew existed.",
+                        featured: false,
+                        avatar: "M"
+                    },
+                    {
+                        id: 4,
+                        name: "Amanda R.",
+                        location: "Florida",
+                        sessionType: "Virtual 60min",
+                        rating: 5,
+                        text: "Dr. C is a true goddess! Her virtual sessions are just as powerful as in-person. The tantric techniques she taught me have revolutionized my self-care practice and intimate relationships.",
+                        featured: false,
+                        avatar: "A"
+                    },
+                    {
+                        id: 5,
+                        name: "Lisa T.",
+                        location: "New York",
+                        sessionType: "Virtual 2hr",
+                        rating: 5,
+                        text: "The luxury virtual experience exceeded all expectations. Dr. C's personalized approach and deep knowledge of tantric healing created a transformative journey I'll never forget.",
+                        featured: false,
+                        avatar: "L"
+                    },
+                    {
+                        id: 6,
+                        name: "Rachel D.",
+                        location: "Georgia",
+                        sessionType: "In-Person 60min",
+                        rating: 5,
+                        text: "Traveling to see Dr. C was the best decision I've made for my personal growth. Her in-person sessions are incredibly healing and empowering. Worth every penny!",
+                        featured: false,
+                        avatar: "R"
+                    },
+                    {
+                        id: 7,
+                        name: "Diana K.",
+                        location: "Colorado",
+                        sessionType: "Virtual 30min",
+                        rating: 5,
+                        text: "Even in just 30 minutes, Dr. C helped me unlock emotional blocks I've carried for years. Her tantric wisdom is incredible. I'm booking my next session immediately!",
+                        featured: false,
+                        avatar: "D"
+                    },
+                    {
+                        id: 8,
+                        name: "Sophia W.",
+                        location: "Arizona",
+                        sessionType: "In-Person 60min",
+                        rating: 5,
+                        text: "Dr. C's in-person sessions are pure magic. The energy work and tantric healing techniques she uses are unlike anything I've experienced. Truly transformative!",
+                        featured: false,
+                        avatar: "S"
+                    },
+                    {
+                        id: 9,
+                        name: "Michelle P.",
+                        location: "Oregon",
+                        sessionType: "Virtual 2hr",
+                        rating: 5,
+                        text: "The 2-hour virtual luxury session was worth every penny. Dr. C guided me through deep healing work that I never thought possible online. Amazing experience!",
+                        featured: false,
+                        avatar: "M"
+                    },
+                    {
+                        id: 10,
+                        name: "Natalie B.",
+                        location: "Nevada",
+                        sessionType: "Virtual 60min",
+                        rating: 5,
+                        text: "Dr. C's virtual sessions are incredibly powerful. Her tantric guidance helped me reconnect with my feminine energy in ways I never imagined. Highly recommend!",
+                        featured: false,
+                        avatar: "N"
+                    }
+                ];
+                
+                // Performance stats - base values with small weekly variations
+                this.stats = {
+                    totalSessions: 547,
+                    averageRating: 4.9,
+                    satisfactionRate: 98
+                };
+                
+                this.init();
+            }
+
+            // Get testimonials to display (rotate different customer reviews weekly)
+            // NOTE: Customer reviews rotate weekly to match pricing cycles
+            getDisplayTestimonials() {
+                // Get current week number to match pricing system rotation
+                const now = new Date();
+                const start = new Date(now.getFullYear(), 0, 1);
+                const diff = now - start;
+                const oneWeek = 1000 * 60 * 60 * 24 * 7;
+                const weekNumber = Math.floor(diff / oneWeek);
+                
+                // Create a seed based on week number for consistent weekly rotation
+                const seed = weekNumber % this.testimonials.length;
+                
+                // Always show featured testimonials first (Sarah M. and Jennifer L.), then rotate others
+                const featured = this.testimonials.filter(t => t.featured);
+                const regular = this.testimonials.filter(t => !t.featured);
+                
+                // Rotate regular testimonials based on weekly seed to show different customers
+                const rotatedRegular = [...regular.slice(seed), ...regular.slice(0, seed)];
+                
+                // Return up to 6 testimonials (2 featured + 4 rotating regular customers)
+                return [...featured, ...rotatedRegular].slice(0, 6);
+            }
+
+            // Generate stars HTML
+            generateStars(rating) {
+                return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+            }
+
+            // Create testimonial card HTML
+            createTestimonialCard(testimonial) {
+                return `
+                    <div class="testimonial-card ${testimonial.featured ? 'featured' : ''}" data-aos="fade-up" data-aos-delay="${testimonial.id * 100}">
+                        <div class="testimonial-session-type">${testimonial.sessionType}</div>
+                        <div class="testimonial-stars">${this.generateStars(testimonial.rating)}</div>
+                        <div class="testimonial-text">${testimonial.text}</div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">${testimonial.avatar}</div>
+                            <div class="testimonial-info">
+                                <h4>${testimonial.name}</h4>
+                                <p>${testimonial.location}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Update testimonials display
+            updateTestimonials() {
+                const container = document.getElementById('testimonialsContainer');
+                if (!container) return;
+
+                const displayTestimonials = this.getDisplayTestimonials();
+                container.innerHTML = displayTestimonials.map(t => this.createTestimonialCard(t)).join('');
+            }
+
+            // Update stats with weekly variations to match other cycles
+            updateStats() {
+                // Get current week number to match pricing and testimonial cycles
+                const now = new Date();
+                const start = new Date(now.getFullYear(), 0, 1);
+                const diff = now - start;
+                const oneWeek = 1000 * 60 * 60 * 24 * 7;
+                const weekNumber = Math.floor(diff / oneWeek);
+                
+                // Add small weekly variations to make it feel dynamic
+                const sessionVariation = weekNumber % 10; // 0-9 additional sessions
+                const ratingVariation = (weekNumber % 3) * 0.1; // 0, 0.1, or 0.2 rating boost
+                const satisfactionVariation = weekNumber % 3; // 0, 1, or 2% boost
+                
+                const totalSessionsEl = document.getElementById('totalSessions');
+                const averageRatingEl = document.getElementById('averageRating');
+                const satisfactionRateEl = document.getElementById('satisfactionRate');
+                
+                if (totalSessionsEl) {
+                    totalSessionsEl.textContent = `${this.stats.totalSessions + sessionVariation}+`;
+                }
+                
+                if (averageRatingEl) {
+                    const currentRating = Math.min(5.0, this.stats.averageRating + ratingVariation);
+                    averageRatingEl.textContent = currentRating.toFixed(1);
+                }
+                
+                if (satisfactionRateEl) {
+                    const currentSatisfaction = Math.min(100, this.stats.satisfactionRate + satisfactionVariation);
+                    satisfactionRateEl.textContent = `${currentSatisfaction}%`;
+                }
+            }
+
+            // Initialize the system
+            init() {
+                // Wait for DOM to be ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        this.updateTestimonials();
+                        this.updateStats();
+                    });
+                } else {
+                    this.updateTestimonials();
+                    this.updateStats();
+                }
+
+                // Update testimonials every hour (since they change weekly, less frequent updates needed)
+                setInterval(() => {
+                    this.updateTestimonials();
+                    this.updateStats();
+                }, 3600000); // 1 hour
+            }
+        }
+
+        // Initialize testimonials system
+        const testimonialsSystem = new TestimonialsSystem();
     </script>
 
 </body>
