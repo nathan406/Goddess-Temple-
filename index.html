@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
     
     <!-- Floating Action Button Styles -->
     <style>
@@ -207,18 +206,17 @@
     </section>
 
 
-    <!-- About Section -->
+    <!-- Meet Dr. C Section -->
     <section id="about" class="about" style="background: linear-gradient(135deg, #f8f0ff, #fff5f5); padding: 4rem 0;">
         <div class="container">
             <div class="section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="color: #8a2be2; font-size: 2.5rem; margin-bottom: 1rem;">About Dr. C</h2>
-                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">Transformational healer, spiritual counselor, and Certified Tantra Educator</p>
+                <h2 style="color: #8a2be2; font-size: 2.5rem; margin-bottom: 1rem;">Meet Dr. C</h2>
             </div>
             <div class="about-content" data-aos="fade-up" style="max-width: 1400px; margin: 0 auto;">
                 <!-- Image and Introduction -->
                 <div style="display: grid; gap: 4rem; grid-template-columns: 1fr 1.2fr; align-items: center; margin-bottom: 4rem;">
                     <div class="about-image" style="text-align: center;">
-                        <img src="assets/images/Dr_C.jpeg" alt="Dr C" class="about-image-main"
+                        <img src="assets/Images/meet_dr_c.jpeg" alt="Dr C" class="about-image-main"
                             style="width: 100%; max-width: 450px; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);">
                     </div>
                     <div class="about-intro" style="text-align: left;">
@@ -254,25 +252,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Areas of Expertise -->
-                <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1); max-width: 2000px; margin: 0 auto;">
-                    <h3 style="color: #8a2be2; font-size: 2rem; margin-bottom: 2rem; text-align: center;">Areas of Expertise</h3>
-                    <div style="display: grid; gap: 2rem; grid-template-columns: 1fr 1fr 1fr;">
-                        <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
-                            <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Sexology Studies</h4>
-                            <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Extensive research and practice in human sexuality and intimate wellness</p>
-                        </div>
-                        <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
-                            <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Bodywork Modalities</h4>
-                            <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Various transformational bodywork and healing techniques</p>
-                        </div>
-                        <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
-                            <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Sexual Healing</h4>
-                            <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Transformational sexual healing and trauma recovery</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -285,12 +264,64 @@
                 .about-intro {
                     text-align: center !important;
                 }
-                /* Make expertise cards stack vertically on mobile */
-                .about-content div[style*="grid-template-columns: 1fr 1fr 1fr"] {
-                    grid-template-columns: 1fr !important;
-                }
                 /* Make credentials stack vertically on mobile */
                 .about-content div[style*="repeat(auto-fit, minmax(350px, 1fr))"] {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- About Dr. C Section -->
+    <section id="about-dr-c" class="about-dr-c" style="background: linear-gradient(135deg, #f8f0ff, #fff5f5); padding: 4rem 0; margin-top: -2rem;">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="color: #8a2be2; font-size: 2.5rem; margin-bottom: 1rem;">About Dr. C</h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">Transformational healer, spiritual counselor, and Certified Tantra Educator</p>
+            </div>
+            
+            <!-- Image and Introduction -->
+            <div style="display: grid; gap: 4rem; grid-template-columns: 1fr 1.2fr; align-items: center; margin-bottom: 4rem; max-width: 1400px; margin-left: auto; margin-right: auto;">
+                <div class="about-image" style="text-align: center;">
+                    <img src="assets/Images/Dr_C.jpeg" alt="Dr C" class="about-image-main"
+                        style="width: 100%; max-width: 450px; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);">
+                </div>
+                <div class="about-intro" style="text-align: left;">
+                    <p style="font-size: 1.3rem; line-height: 1.8; color: #666; margin-bottom: 2rem;">Dr. C holds a Doctor of Divinity in Spiritual Counseling and brings together a unique combination of credentials and expertise to create transformative healing experiences that honor the sacred connection between mind, body, and spirit.</p>
+                </div>
+            </div>
+
+            <!-- Areas of Expertise -->
+            <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1); margin: 0 auto; max-width: 1400px;">
+                <h3 style="color: #8a2be2; font-size: 2rem; margin-bottom: 2rem; text-align: center;">Areas of Expertise</h3>
+                <div style="display: grid; gap: 2rem; grid-template-columns: 1fr 1fr 1fr;">
+                    <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
+                        <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Sexology Studies</h4>
+                        <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Extensive research and practice in human sexuality and intimate wellness</p>
+                    </div>
+                    <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
+                        <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Bodywork Modalities</h4>
+                        <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Various transformational bodywork and healing techniques</p>
+                    </div>
+                    <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
+                        <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Sexual Healing</h4>
+                        <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Transformational sexual healing and trauma recovery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            @media (max-width: 768px) {
+                div[style*="grid-template-columns: 1fr 1.2fr"] {
+                    grid-template-columns: 1fr !important;
+                    text-align: center !important;
+                }
+                .about-intro {
+                    text-align: center !important;
+                }
+                /* Make expertise cards stack vertically on mobile */
+                div[style*="grid-template-columns: 1fr 1fr 1fr"] {
                     grid-template-columns: 1fr !important;
                 }
             }
@@ -1762,30 +1793,34 @@
         // Navbar Scroll Effect
         window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            if (navbar) {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             }
         });
 
         // Scroll to Top Button
         const scrollTopBtn = document.querySelector('.scroll-top');
 
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 300) {
-                scrollTopBtn.classList.add('active');
-            } else {
-                scrollTopBtn.classList.remove('active');
-            }
-        });
-
-        scrollTopBtn.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
             });
-        });
+
+            scrollTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
 
         // Gallery Lightbox
         const galleryItems = document.querySelectorAll('.gallery-item');
