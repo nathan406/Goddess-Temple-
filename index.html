@@ -294,18 +294,33 @@
             <!-- Areas of Expertise -->
             <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1); margin: 0 auto; max-width: 1400px;">
                 <h3 style="color: #8a2be2; font-size: 2rem; margin-bottom: 2rem; text-align: center;">Areas of Expertise</h3>
-                <div style="display: grid; gap: 2rem; grid-template-columns: 1fr 1fr 1fr;">
-                    <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
-                        <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Sexology Studies</h4>
-                        <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Extensive research and practice in human sexuality and intimate wellness</p>
+                <div style="display: grid; gap: 2rem; grid-template-columns: 1fr 2fr; align-items: center;">
+                    <!-- Image on the left side -->
+                    <div style="text-align: center;">
+                        <img src="assets/Images/expertise.jpeg" alt="Areas of Expertise" style="width: 100%; max-width: 400px; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);">
                     </div>
-                    <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
-                        <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Bodywork Modalities</h4>
-                        <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Various transformational bodywork and healing techniques</p>
-                    </div>
-                    <div style="padding: 2.5rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
-                        <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Sexual Healing</h4>
-                        <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Transformational sexual healing and trauma recovery</p>
+                    
+                    <!-- Expertise content on the right side -->
+                    <div>
+                        <!-- First row with two columns -->
+                        <div style="display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
+                            <div style="padding: 2rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
+                                <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Bodywork Modalities</h4>
+                                <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Various transformational bodywork and healing techniques</p>
+                            </div>
+                            <div style="padding: 2rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1);">
+                                <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Sexology Studies</h4>
+                                <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Extensive research and practice in human sexuality and intimate wellness</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Second row centered -->
+                        <div style="display: grid; gap: 2rem; grid-template-columns: 1fr; justify-items: center;">
+                            <div style="padding: 2rem; background: rgba(138, 43, 226, 0.05); border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.1); max-width: 800px; width: 100%;">
+                                <h4 style="color: #8a2be2; margin-bottom: 1rem; font-size: 1.3rem;">Sexual Healing</h4>
+                                <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;">Transformational sexual healing and trauma recovery</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -320,9 +335,15 @@
                 .about-intro {
                     text-align: center !important;
                 }
-                /* Make expertise cards stack vertically on mobile */
-                div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+                /* Make expertise section responsive */
+                div[style*="grid-template-columns: 1fr 2fr"] {
                     grid-template-columns: 1fr !important;
+                }
+                div[style*="grid-template-columns: 1fr 1fr"] {
+                    grid-template-columns: 1fr !important;
+                }
+                div[style*="justify-items: center"] > div {
+                    max-width: 100% !important;
                 }
             }
         </style>
