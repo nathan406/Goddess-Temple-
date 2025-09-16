@@ -833,6 +833,292 @@ section {
     text-align: center;
 }
 
+/* Soul Support Section */
+.soul-support-section {
+    background: linear-gradient(135deg, #f8f0ff, #fff5f5);
+    padding: 3rem 0;
+}
+
+.soul-support-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
+    border: 2px solid rgba(138, 43, 226, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.soul-support-content::before {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(45deg, #8a2be2, #ee5a24);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotate(15deg);
+    content: "FREE SESSION";
+}
+
+.soul-support-image img {
+    max-width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+    height: auto;
+}
+
+.soul-support-text {
+    text-align: center;
+}
+
+.soul-support-text h3 {
+    color: #8a2be2;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.soul-support-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.soul-support-text .btn {
+    background: linear-gradient(45deg, #8a2be2, #ee5a24);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.soul-support-text .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+/* Soul Support Popup */
+.popup-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease-in-out;
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup-modal[style*="block"] {
+    display: block !important;
+}
+
+.popup-modal.show {
+    display: block !important;
+}
+
+.popup-content {
+    background: white;
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    animation: slideIn 0.3s ease-in-out;
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+    border: 2px solid rgba(138, 43, 226, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 10000;
+}
+
+.popup-content::before {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(45deg, #8a2be2, #ee5a24);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotate(15deg);
+    content: "FREE SESSION";
+    z-index: 10000;
+}
+
+.popup-image {
+    width: 100%;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.popup-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.popup-text {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.popup-text h3 {
+    color: #8a2be2;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.popup-text p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.popup-text .btn {
+    background: linear-gradient(45deg, #8a2be2, #ee5a24);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.popup-text .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+.popup-close {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.popup-close:hover {
+    color: #8a2be2;
+}
+
+/* Large screen layout for popup - image on left, content on right */
+@media (min-width: 769px) {
+    .popup-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        max-width: 900px;
+        max-height: 80vh;
+    }
+    
+    .popup-image {
+        width: 40%;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .popup-image img {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .popup-text {
+        width: 60%;
+        padding: 2rem;
+        text-align: left;
+    }
+    
+    .popup-text h3 {
+        text-align: left;
+    }
+    
+    .popup-text p {
+        text-align: left;
+    }
+    
+    .popup-text .btn {
+        margin: 0;
+    }
+}
+
+/* Media Queries for Soul Support Section */
+@media (max-width: 768px) {
+    .soul-support-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .soul-support-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .soul-support-text p {
+        font-size: 1rem;
+    }
+    
+    .popup-content {
+        margin: 5% auto;
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .popup-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .popup-text p {
+        font-size: 1rem;
+    }
+    
+    .popup-image {
+        padding: 1rem 1rem 0 1rem;
+    }
+    
+    .popup-image img {
+        max-width: 100%;
+    }
+}
+
+/* Very large screen adjustment */
+@media (min-height: 900px) {
+    .popup-content {
+        margin: 5% auto;
+    }
+}
+
 
 /* Media Queries */
 @media (max-width: 992px) {
