@@ -833,7 +833,7 @@ section {
     text-align: center;
 }
 
-/* Soul Support Section */
+/* Virtual Encounters Section */
 .soul-support-section {
     background: linear-gradient(135deg, #f8f0ff, #fff5f5);
     padding: 3rem 0;
@@ -866,7 +866,7 @@ section {
     font-size: 0.8rem;
     font-weight: bold;
     transform: rotate(15deg);
-    content: "FREE SESSION";
+    content: "VIRTUAL SESSION";
 }
 
 .soul-support-image img {
@@ -909,7 +909,7 @@ section {
     box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
 }
 
-/* Soul Support Popup */
+/* Virtual Encounters Popup */
 .popup-modal {
     display: none;
     position: fixed;
@@ -963,7 +963,7 @@ section {
     font-size: 0.8rem;
     font-weight: bold;
     transform: rotate(15deg);
-    content: "FREE SESSION";
+    content: "VIRTUAL SESSION";
     z-index: 10000;
 }
 
@@ -1089,6 +1089,34 @@ section {
         font-size: 1rem;
     }
     
+    /* Popup responsiveness */
+    .popup-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .popup-image, .popup-text {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .popup-image {
+        padding-bottom: 0;
+    }
+    
+    .popup-text h3 {
+        text-align: center;
+    }
+    
+    .popup-text p {
+        text-align: center;
+    }
+    
+    .popup-text .btn {
+        margin: 0 auto;
+    }
+}
+    
     .popup-content {
         margin: 5% auto;
         width: 95%;
@@ -1116,6 +1144,30 @@ section {
 @media (min-height: 900px) {
     .popup-content {
         margin: 5% auto;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+    .popup-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+    
+    .popup-image {
+        padding: 1rem 1rem 0 1rem;
+    }
+    
+    .popup-text {
+        padding: 1rem;
+    }
+    
+    .popup-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .popup-text p {
+        font-size: 0.9rem;
     }
 }
 

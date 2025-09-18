@@ -1,9 +1,9 @@
-// Soul Support Session Popup
+// Virtual Encounters Popup
 console.log('Script loaded');
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM content loaded event fired');
-    const popup = document.getElementById('soulSupportPopup');
+    const popup = document.getElementById('virtualEncountersPopup');
     const closeBtn = document.querySelector('.popup-close');
     
     // Debugging
@@ -14,14 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    // Check if popup has been shown today
-    const popupShown = localStorage.getItem('soulSupportPopupShown');
-    const today = new Date().toDateString();
-    
-    console.log('Popup shown today:', popupShown);
-    console.log('Today:', today);
-    
-    // Always show popup for testing (removed the date check)
+    // Show popup after 3 seconds on every page load
     console.log('Setting timeout to show popup');
     setTimeout(function() {
         console.log('Showing popup');
@@ -29,9 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.display = 'block';
         popup.classList.add('show');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        // Mark popup as shown today
-        localStorage.setItem('soulSupportPopupShown', today);
-    }, 2000); // Show after 2 seconds
+    }, 3000); // Show after 3 seconds
     
     // Close popup when close button is clicked
     if (closeBtn) {
@@ -62,6 +53,24 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'auto';
         }
     });
+    
+    // Handle "View all virtual session options" link click
+    const viewAllLink = document.querySelector('.popup-text a[href="#services"]');
+    if (viewAllLink) {
+        viewAllLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Closing popup and navigating to services section');
+            popup.style.display = 'none';
+            popup.classList.remove('show');
+            document.body.style.overflow = 'auto';
+            
+            // Scroll to services section
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 });
 
 // Also try with window.onload as a fallback
